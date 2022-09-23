@@ -2461,7 +2461,7 @@ header .hover-section .other-links-container .item-content h2 {
 
 /*! Stats [Start] */
 .stats {
-  background: url(imgs/stats.jpg);
+  background: url(https://moamal-2000.github.io/template1/imgs/stats.jpg);
   background-repeat: no-repeat;
   background-size: cover;
   position: relative;
@@ -2607,7 +2607,7 @@ header .hover-section .other-links-container .item-content h2 {
 
 .discount .info-discount {
   flex-basis: 50%;
-  background: url(imgs/discount-background2.jpg);
+  background: url(https://moamal-2000.github.io/template1/imgs/discount-background2.jpg);
   background-size: cover;
   background-repeat: no-repeat;
   text-align: center;

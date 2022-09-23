@@ -1,8 +1,11 @@
 "use strict";
+//! I used deprecated method [addRule] just for test
+
 //* All Variables & Elements [Start]
 let colorGenerator = document.getElementById("color-generator"),
   tool = document.getElementById("tool-gen"),
   html = document.getElementById("my-html"),
+  colorsContainer = document.querySelectorAll(".colors-container div"),
   red = document.getElementById("red-theme"),
   blue = document.getElementById("blue-theme"),
   green = document.getElementById("green-theme"),
@@ -41,6 +44,12 @@ let colorGenerator = document.getElementById("color-generator"),
 //* All Variables & Elements [End]
 
 //! Colors Theme Codes [Start]
+// Set Default Color Website
+if (localStorage.websiteThemeColor === undefined) {
+  localStorage.websiteThemeColor = "blue";
+  html.classList.add(localStorage.websiteThemeColor);
+}
+
 var timer10second;
 tool.onclick = () => {
   let limitedTime = 10000;
@@ -59,77 +68,17 @@ tool.onclick = () => {
   }
 };
 
-red.onclick = () => {
-  html.className = "";
-  window.localStorage.websiteThemeColor = "red";
-  html.classList.add(window.localStorage.websiteThemeColor);
-  closeSwitcher();
-};
-blue.onclick = () => {
-  html.className = "";
-  window.localStorage.websiteThemeColor = "blue";
-  html.classList.add(window.localStorage.websiteThemeColor);
-  closeSwitcher();
-};
-green.onclick = () => {
-  html.className = "";
-  window.localStorage.websiteThemeColor = "green";
-  html.classList.add(window.localStorage.websiteThemeColor);
-  closeSwitcher();
-};
-purple.onclick = () => {
-  html.className = "";
-  window.localStorage.websiteThemeColor = "purple";
-  html.classList.add(window.localStorage.websiteThemeColor);
-  closeSwitcher();
-};
-yellow.onclick = () => {
-  html.className = "";
-  window.localStorage.websiteThemeColor = "yellow";
-  html.classList.add(window.localStorage.websiteThemeColor);
-  closeSwitcher();
-};
-purplePink.onclick = () => {
-  html.className = "";
-  window.localStorage.websiteThemeColor = "purple-pink";
-  html.classList.add(window.localStorage.websiteThemeColor);
-  closeSwitcher();
-};
-pink.onclick = () => {
-  html.className = "";
-  window.localStorage.websiteThemeColor = "pink";
-  html.classList.add(window.localStorage.websiteThemeColor);
-  closeSwitcher();
-};
-orange.onclick = () => {
-  html.className = "";
-  window.localStorage.websiteThemeColor = "orange";
-  html.classList.add(window.localStorage.websiteThemeColor);
-  closeSwitcher();
-};
-idkName.onclick = () => {
-  html.className = "";
-  window.localStorage.websiteThemeColor = "idk-name";
-  html.classList.add(window.localStorage.websiteThemeColor);
-  closeSwitcher();
-};
-black.onclick = () => {
-  html.className = "";
-  window.localStorage.websiteThemeColor = "black";
-  html.classList.add(window.localStorage.websiteThemeColor);
-  closeSwitcher();
-};
-gray.onclick = () => {
-  html.className = "";
-  window.localStorage.websiteThemeColor = "gray";
-  html.classList.add(window.localStorage.websiteThemeColor);
-  closeSwitcher();
-};
-html.className = "";
-html.classList.add(window.localStorage.websiteThemeColor);
+colorsContainer.forEach((element) => {
+  element.addEventListener("click", (e) => {
+    html.className = "";
+    window.localStorage.websiteThemeColor = element.dataset.color;
+    html.classList.add(window.localStorage.websiteThemeColor);
+    closeSwitcher();
+  });
+});
 
 function closeSwitcher() {
-  document.styleSheets[2].addRule(
+  document.styleSheets[1].addRule(
     ".color-generator .switch-colors-on-off::before",
     "right: 3px;"
   );
@@ -144,7 +93,7 @@ switchColorsButton.onclick = () => {
   let length = 11;
   let speed = 500;
   if (!switcher) {
-    document.styleSheets[2].addRule(
+    document.styleSheets[1].addRule(
       ".color-generator .switch-colors-on-off::before",
       "right: 14px;"
     );
@@ -199,28 +148,32 @@ for (let i = 0; i < allImages.length; i++) {
 //! Add alt attribute to images [End]
 
 //? Our Skills Animation on scroll [Start]
+let skillsContainer = document.querySelector(".skills-container");
 let levelSkills = document.querySelectorAll(".skills-container .label");
 function addLevels() {
-  document.styleSheets[2].addRule(
+  document.styleSheets[1].addRule(
     `.our-skills .container .skills-container .label[data-skills='${levelSkills[0].dataset.skills}']::before`,
     `width: ${levelSkills[0].dataset.skills}`
   );
-  document.styleSheets[2].addRule(
+  document.styleSheets[1].addRule(
     `.our-skills .container .skills-container .label[data-skills='${levelSkills[1].dataset.skills}']::before`,
     `width: ${levelSkills[1].dataset.skills}`
   );
-  document.styleSheets[2].addRule(
+  document.styleSheets[1].addRule(
     `.our-skills .container .skills-container .label[data-skills='${levelSkills[2].dataset.skills}']::before`,
     `width: ${levelSkills[2].dataset.skills}`
   );
-  document.styleSheets[2].addRule(
+  document.styleSheets[1].addRule(
     `.our-skills .container .skills-container .label[data-skills='${levelSkills[3].dataset.skills}']::before`,
     `width: ${levelSkills[3].dataset.skills}`
   );
 }
 
 window.addEventListener("scroll", () => {
-  if (scrollY > 7200 && innerWidth > 1280) {
+  if (
+    scrollY >
+    skillsContainer.offsetHeight + skillsContainer.offsetTop - innerHeight
+  ) {
     addLevels();
   }
 });

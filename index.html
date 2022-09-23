@@ -1,15 +1,16 @@
 <!DOCTYPE HTML>
-<html lang="en" id="my-html" class="idk-name">
+<html lang="en" id="my-html" class="blue">
 
 <head>
   <meta charset="UTF-8" />
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <!-- Font Awesome -->
-  <link rel="stylesheet" href="css/all.min.css">
-  <!-- Reset styles -->
+  <title>First Project</title>
+  <!-- Website Main Icon -->
+  <link rel="shortcut icon" href="imgs/main-icon-website.png" type="image/x-icon">
+  <!-- Reset Styles -->
   <link rel="stylesheet" href="css/normalize.css">
-  <!-- main-styles file -->
+  <!-- main-Styles File -->
   <link rel="stylesheet" href="css/style.css">
   <!-- Google Fonts -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -19,27 +20,26 @@
     rel="stylesheet">
   <!-- Font Awesome Icons -->
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.8.1/font/bootstrap-icons.css">
-  <script src="https://kit.fontawesome.com/5a1527845b.js" crossorigin="anonymous"></script>
-  <title>Moamal</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.2/css/all.min.css">
 </head>
 
 <body>
   <div class="color-generator" id="color-generator">
     <div class="colors-container">
-      <div class="red-theme" id="red-theme"></div>
-      <div class="blue-theme" id="blue-theme"></div>
-      <div class="green-theme" id="green-theme"></div>
-      <div class="purple-theme" id="purple-theme"></div>
-      <div class="yellow-theme" id="yellow-theme"></div>
-      <div class="purple-pink-theme" id="purple-pink-theme"></div>
-      <div class="pink-theme" id="pink-theme"></div>
-      <div class="orange-theme" id="orange-theme"></div>
-      <div class="idk-name-theme" id="idk-name-theme"></div>
-      <div class="black-theme" id="black-theme"></div>
-      <div class="gray-theme" id="gray-theme"></div>
+      <div class="red-theme" id="red-theme" data-color="red"></div>
+      <div class="blue-theme" id="blue-theme" data-color="blue"></div>
+      <div class="green-theme" id="green-theme" data-color="green"></div>
+      <div class="purple-theme" id="purple-theme" data-color="purple"></div>
+      <div class="yellow-theme" id="yellow-theme" data-color="yellow"></div>
+      <div class="purple-pink-theme" id="purple-pink-theme" data-color="purple-pink"></div>
+      <div class="pink-theme" id="pink-theme" data-color="pink"></div>
+      <div class="orange-theme" id="orange-theme" data-color="orange"></div>
+      <div class="idk-name-theme" id="idk-name-theme" data-color="idk-name"></div>
+      <div class="black-theme" id="black-theme" data-color="black"></div>
+      <div class="gray-theme" id="gray-theme" data-color="gray"></div>
     </div>
     <div class="tool-container">
-      <i class="bi bi-gear-fill" id="tool-gen"></i>
+      <i class="bi bi-gear-fill fa-spin" id="tool-gen"></i>
     </div>
     <div class="switch-colors-on-off">
       <p>Color Mode</p>
@@ -953,9 +953,9 @@
 
     <form class="req-discount">
       <h2>Request A Discount</h2>
-      <input type="text" name="user-name" placeholder="Your Name">
-      <input type="email" name="email" placeholder="Your Email">
-      <input type="tel" name="number-mobile" placeholder="Your Phone">
+      <input type="text" name="user-name" placeholder="Your Name" required>
+      <input type="email" name="email" placeholder="Your Email" required>
+      <input type="tel" name="number-mobile" placeholder="Your Phone" required>
       <textarea name="message" placeholder="Tell Us About Your Needs"></textarea>
       <input type="submit" value="Send">
     </form>

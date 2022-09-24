@@ -147,7 +147,29 @@ for (let i = 0; i < allImages.length; i++) {
 }
 //! Add alt attribute to images [End]
 
-//? Our Skills Animation on scroll [Start]
+//? popup for gallery images [Start]
+let galleryImages = document.querySelectorAll(".boxes-container .main-box");
+let overlay = document.createElement("div");
+let popupBox = document.createElement("div");
+let popupImage = document.createElement("img");
+galleryImages.forEach((img) => {
+  img.addEventListener("click", () => {
+    overlay.className = "popup-overlay";
+    popupBox.className = "popup-box";
+    popupImage.src = img.children[0].children[0].src;
+    document.body.append(overlay);
+    popupBox.append(popupImage);
+    document.body.append(popupBox);
+  });
+});
+overlay.addEventListener("click", () => {
+  overlay.remove();
+  popupBox.remove();
+  popupImage.remove();
+});
+//? popup for gallery images [End]
+
+//! Our Skills Animation on scroll [Start]
 let skillsContainer = document.querySelector(".skills-container");
 let levelSkills = document.querySelectorAll(".skills-container .label");
 function addLevels() {
@@ -177,9 +199,9 @@ window.addEventListener("scroll", () => {
     addLevels();
   }
 });
-//? Our Skills Animation on scroll [End]
+//! Our Skills Animation on scroll [End]
 
-//! Hide/Show Header [Start]
+//? Hide/Show Header [Start]
 function toggleHeader(moveTo) {
   if (!switchHeader) {
     closeOpenHeaderSound.play();
@@ -210,7 +232,7 @@ closerHeader.addEventListener("click", () => {
   } else if (innerWidth <= 610 && innerWidth > 388) {
     toggleHeader("-92%");
   } else if (innerWidth <= 388) {
-    toggleHeader("-91%");
+    toggleHeader("-90%");
   }
 });
 
@@ -222,13 +244,13 @@ closerHeader.addEventListener("mouseout", () => {
   if (!switchHeader) closerHeader.style.color = "#ff3434"; //red
   else closerHeader.style.color = "#23fa23";
 });
-//! Hide/Show Header [End]
+//? Hide/Show Header [End]
 
-//? Show Menu With Click [Start]
+//! Show Menu With Click [Start]
 menu.style.display = "none";
 otherLinksButton.onclick = () => {
   menu.style.display === "none"
     ? (menu.style.display = "flex")
     : (menu.style.display = "none");
 };
-//? Show Menu With Click [End]
+//! Show Menu With Click [End]

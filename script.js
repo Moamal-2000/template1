@@ -1,5 +1,4 @@
 "use strict";
-//! I used deprecated method [addRule] just for test
 
 //* All Variables & Elements [Start]
 let colorGenerator = document.getElementById("color-generator"),
@@ -78,7 +77,7 @@ colorsContainer.forEach((element) => {
 });
 
 function closeSwitcher() {
-  document.styleSheets[1].addRule(
+  document.styleSheets[1].cssRules(
     ".color-generator .switch-colors-on-off::before",
     "right: 3px;"
   );
@@ -93,7 +92,7 @@ switchColorsButton.onclick = () => {
   let length = 11;
   let speed = 500;
   if (!switcher) {
-    document.styleSheets[1].addRule(
+    document.styleSheets[1].cssRules(
       ".color-generator .switch-colors-on-off::before",
       "right: 14px;"
     );
@@ -173,19 +172,19 @@ overlay.addEventListener("click", () => {
 let skillsContainer = document.querySelector(".skills-container");
 let levelSkills = document.querySelectorAll(".skills-container .label");
 function addLevels() {
-  document.styleSheets[1].addRule(
+  document.styleSheets[1].cssRules(
     `.our-skills .container .skills-container .label[data-skills='${levelSkills[0].dataset.skills}']::before`,
     `width: ${levelSkills[0].dataset.skills}`
   );
-  document.styleSheets[1].addRule(
+  document.styleSheets[1].cssRules(
     `.our-skills .container .skills-container .label[data-skills='${levelSkills[1].dataset.skills}']::before`,
     `width: ${levelSkills[1].dataset.skills}`
   );
-  document.styleSheets[1].addRule(
+  document.styleSheets[1].cssRules(
     `.our-skills .container .skills-container .label[data-skills='${levelSkills[2].dataset.skills}']::before`,
     `width: ${levelSkills[2].dataset.skills}`
   );
-  document.styleSheets[1].addRule(
+  document.styleSheets[1].cssRules(
     `.our-skills .container .skills-container .label[data-skills='${levelSkills[3].dataset.skills}']::before`,
     `width: ${levelSkills[3].dataset.skills}`
   );

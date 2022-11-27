@@ -1,7 +1,7 @@
 "use strict";
 
 //* All Variables & Elements [Start]
-let colorGenerator = document.getElementById("color-generator"),
+const colorGenerator = document.getElementById("color-generator"),
   tool = document.getElementById("tool-gen"),
   html = document.getElementById("my-html"),
   colorsContainer = document.querySelectorAll(".colors-container div"),
@@ -18,7 +18,15 @@ let colorGenerator = document.getElementById("color-generator"),
   gray = document.getElementById("gray-theme"),
   switchColorsButton = document.querySelector(".switch-colors-on-off"),
   bodySwitcher = document.querySelector(".switch-colors-on-off"),
-  switcher = false,
+  button = document.getElementById("scroll-to-top-button"),
+  labels = document.querySelectorAll(".label"),
+  menu = document.querySelector(".hover-section"),
+  otherLinksButton = document.querySelector(".other-links"),
+  closerHeader = document.querySelector(".close-header"),
+  header = document.querySelector("header"),
+  closeOpenHeaderSound = new Audio("sounds-effect/header-sound.m4a");
+
+let switcher = false,
   colors = [
     "red",
     "blue",
@@ -32,14 +40,7 @@ let colorGenerator = document.getElementById("color-generator"),
     "gray",
     "black",
   ],
-  button = document.getElementById("scroll-to-top-button"),
-  labels = document.querySelectorAll(".label"),
-  menu = document.querySelector(".hover-section"),
-  otherLinksButton = document.querySelector(".other-links"),
-  closerHeader = document.querySelector(".close-header"),
-  header = document.querySelector("header"),
-  switchHeader = false,
-  closeOpenHeaderSound = new Audio("sounds-effect/header-sound.m4a");
+  switchHeader = false;
 //* All Variables & Elements [End]
 
 //! Colors Theme Codes [Start]
@@ -47,8 +48,9 @@ let colorGenerator = document.getElementById("color-generator"),
 if (localStorage.websiteThemeColor === undefined) {
   localStorage.websiteThemeColor = "blue";
   html.classList.add(localStorage.websiteThemeColor);
-}
+} else html.classList.add(localStorage.websiteThemeColor);
 
+// set Timer to close Color Theme Settings
 var timer10second;
 tool.onclick = () => {
   let limitedTime = 10000;
@@ -68,58 +70,19 @@ tool.onclick = () => {
 };
 
 colorsContainer.forEach((element) => {
-  element.addEventListener("click", (e) => {
+  element.addEventListener("click", () => {
     html.className = "";
-    window.localStorage.websiteThemeColor = element.dataset.color;
-    html.classList.add(window.localStorage.websiteThemeColor);
-    closeSwitcher();
+    localStorage.websiteThemeColor = element.dataset.color;
+    html.classList.add(localStorage.websiteThemeColor);
   });
 });
-
-function closeSwitcher() {
-  document.styleSheets[1].cssRules(
-    ".color-generator .switch-colors-on-off::before",
-    "right: 3px;"
-  );
-  bodySwitcher.style.backgroundColor = "#ff1818";
-  clearInterval(timer);
-  switcher = false;
-}
-
-var timer;
-switchColorsButton.onclick = () => {
-  let i = 0;
-  let length = 11;
-  let speed = 500;
-  if (!switcher) {
-    document.styleSheets[1].cssRules(
-      ".color-generator .switch-colors-on-off::before",
-      "right: 14px;"
-    );
-    bodySwitcher.style.backgroundColor = "#65ccff";
-    timer = setInterval(() => {
-      if (i < length) {
-        html.className = "";
-        html.classList.add(colors[i]);
-        i++;
-      } else {
-        i = 0;
-      }
-    }, speed);
-    switcher = true;
-  } else {
-    closeSwitcher();
-  }
-};
 //! Colors Theme Codes [End]
 
 //? Scroll Button [Start]
 window.onscroll = () => {
-  if (scrollY >= 600) {
-    button.style.visibility = "visible";
-  } else {
-    button.style.visibility = "hidden";
-  }
+  scrollY >= 2000
+    ? (button.style.visibility = "visible")
+    : (button.style.visibility = "hidden");
 };
 
 button.addEventListener("click", () => {
@@ -169,33 +132,22 @@ overlay.addEventListener("click", () => {
 //? popup for gallery images [End]
 
 //! Our Skills Animation on scroll [Start]
-let skillsContainer = document.querySelector(".skills-container");
-let levelSkills = document.querySelectorAll(".skills-container .label");
-function addLevels() {
-  document.styleSheets[1].cssRules(
-    `.our-skills .container .skills-container .label[data-skills='${levelSkills[0].dataset.skills}']::before`,
-    `width: ${levelSkills[0].dataset.skills}`
+const skillsContainer = document.querySelector(".skills-container"),
+  levelSkills = document.querySelectorAll(
+    ".skills-container .skill .label span"
   );
-  document.styleSheets[1].cssRules(
-    `.our-skills .container .skills-container .label[data-skills='${levelSkills[1].dataset.skills}']::before`,
-    `width: ${levelSkills[1].dataset.skills}`
-  );
-  document.styleSheets[1].cssRules(
-    `.our-skills .container .skills-container .label[data-skills='${levelSkills[2].dataset.skills}']::before`,
-    `width: ${levelSkills[2].dataset.skills}`
-  );
-  document.styleSheets[1].cssRules(
-    `.our-skills .container .skills-container .label[data-skills='${levelSkills[3].dataset.skills}']::before`,
-    `width: ${levelSkills[3].dataset.skills}`
-  );
-}
+
+let levelSkillsActive = false;
 
 window.addEventListener("scroll", () => {
-  if (
-    scrollY >
-    skillsContainer.offsetHeight + skillsContainer.offsetTop - innerHeight
-  ) {
-    addLevels();
+  let heightLevels = skillsContainer.offsetHeight + skillsContainer.offsetTop;
+  if (scrollY - 250 > heightLevels - innerHeight) {
+    if (!levelSkillsActive) {
+      levelSkills.forEach(
+        (skill) => (skill.style.width = skill.dataset.skills)
+      );
+      levelSkillsActive = true;
+    }
   }
 });
 //! Our Skills Animation on scroll [End]
@@ -253,3 +205,25 @@ otherLinksButton.onclick = () => {
     : (menu.style.display = "none");
 };
 //! Show Menu With Click [End]
+
+//? set time count down until new year [Start]
+let timerUnites = document.querySelectorAll(
+  ".latest-events .main-part .info .timer span"
+);
+
+let second = 1000,
+  minute = second * 60,
+  hour = minute * 60,
+  day = hour * 24;
+
+let newYearTimer = setInterval(() => {
+  let timeNow = new Date().getTime(),
+    newYear = new Date(`${new Date().getFullYear() + 1}`).getTime(),
+    newYearTime = newYear - timeNow;
+
+  timerUnites[0].textContent = Math.floor(newYearTime / day);
+  timerUnites[1].textContent = Math.floor((newYearTime % day) / hour);
+  timerUnites[2].textContent = Math.floor((newYearTime % hour) / minute);
+  timerUnites[3].textContent = Math.floor((newYearTime % minute) / second);
+}, 1000);
+//? set time count down until new year [End]

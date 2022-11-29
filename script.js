@@ -227,3 +227,26 @@ let newYearTimer = setInterval(() => {
   timerUnites[3].textContent = Math.floor((newYearTime % minute) / second);
 }, 1000);
 //? set time count down until new year [End]
+
+//! Increment counter [Start]
+let stats = document.querySelectorAll(".stats .box .stat");
+let statsContainer = document.querySelector(".stats");
+
+function startCount() {
+  stats.forEach((ele) => {
+    let timer = setInterval(() => {
+      ele.textContent++;
+      if (ele.textContent >= +ele.dataset.stat) {
+        clearInterval(timer);
+        ele.textContent = ele.dataset.stat;
+      }
+    }, 1000 / parseInt(ele.textContent));
+  });
+}
+
+window.addEventListener("scroll", () => {
+  let eleHeight = statsContainer.getBoundingClientRect().top;
+  if (eleHeight + statsContainer.clientHeight < window.innerHeight)
+    startCount();
+});
+//! Increment counter [End]

@@ -807,7 +807,7 @@
 
       <form>
         <div class="email-container">
-          <input type="email" placeholder="Enter Your Email" name="email">
+          <input type="email" placeholder="Enter Your Email" name="email" required>
           <input type="submit" value="Subscribe" class="submit-button">
         </div>
       </form>
@@ -931,25 +931,25 @@
     <div class="container">
       <div class="box">
         <i class="far fa-user fa-2x fa-fw"></i>
-        <span>150</span>
+        <span class="stat" data-stat="150">0</span>
         <span>Clients</span>
       </div>
 
       <div class="box">
         <i class="fas fa-code fa-2x fa-fw"></i>
-        <span>135</span>
+        <span class="stat" data-stat="135">0</span>
         <span>Projects</span>
       </div>
 
       <div class="box">
         <i class="fas fa-globe-asia fa-2x fa-fw"></i>
-        <span>50</span>
+        <span class="stat" data-stat="50">0</span>
         <span>Contries</span>
       </div>
 
       <div class="box">
         <i class="far fa-money-bill-alt fa-2x fa-fw"></i>
-        <span>500k</span>
+        <span class="stat" data-stat="500">0</span>
         <span>Money</span>
       </div>
     </div>
@@ -973,7 +973,7 @@
       <input type="text" name="user-name" placeholder="Your Name" required>
       <input type="email" name="email" placeholder="Your Email" required>
       <input type="tel" name="number-mobile" placeholder="Your Phone" required>
-      <textarea name="message" placeholder="Tell Us About Your Needs"></textarea>
+      <textarea name="message" placeholder="Tell Us About Your Needs" required></textarea>
       <input type="submit" value="Send">
     </form>
   </div>

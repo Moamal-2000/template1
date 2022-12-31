@@ -226,6 +226,12 @@ let newYearTimer = setInterval(() => {
   timerUnites[2].textContent = Math.floor((newYearTime % hour) / minute);
   timerUnites[3].textContent = Math.floor((newYearTime % minute) / second);
 }, 1000);
+
+// Set the new year message
+let nextYear = new Date().getFullYear() + 1;
+const textNewYear = document.querySelector('.new-year-msg');
+textNewYear.textContent = textNewYear.textContent + nextYear
+
 //? set time count down until new year [End]
 
 //! Increment counter [Start]

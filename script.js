@@ -48,7 +48,10 @@ let switcher = false,
 if (localStorage.websiteThemeColor === undefined) {
   localStorage.websiteThemeColor = "blue";
   html.classList.add(localStorage.websiteThemeColor);
-} else html.classList.add(localStorage.websiteThemeColor);
+} else {
+  html.className = "";
+  html.classList.add(localStorage.websiteThemeColor);
+}
 
 // set Timer to close Color Theme Settings
 var timer10second;
@@ -86,7 +89,7 @@ window.onscroll = () => {
 };
 
 button.addEventListener("click", () => {
-  scrollTo({
+  window.scrollTo({
     top: 0,
     left: 0,
     behavior: "smooth",
@@ -95,18 +98,14 @@ button.addEventListener("click", () => {
 //? Scroll Button [End]
 
 //! Add alt attribute to images [Start]
-let allImages = document.images;
+let allImages = document.querySelectorAll("img");
 let countImages = 1;
 
-for (let i = 0; i < allImages.length; i++) {
-  if (allImages[i].alt === "") {
-    allImages[i].removeAttribute("alt");
-  }
-  if (!allImages[i].hasAttribute("alt")) {
-    allImages[i].setAttribute("alt", `Image${countImages}`);
-    countImages++;
-  }
-}
+allImages.forEach((image) => {
+  if (!image.hasAttribute("alt"))
+    image.setAttribute("alt", `Image${countImages}`);
+  countImages++;
+});
 //! Add alt attribute to images [End]
 
 //? popup for gallery images [Start]
@@ -229,8 +228,8 @@ let newYearTimer = setInterval(() => {
 
 // Set the new year message
 let nextYear = new Date().getFullYear() + 1;
-const textNewYear = document.querySelector('.new-year-msg');
-textNewYear.textContent = textNewYear.textContent + nextYear
+const textNewYear = document.querySelector(".new-year-msg");
+textNewYear.textContent = textNewYear.textContent + nextYear;
 
 //? set time count down until new year [End]
 
@@ -256,3 +255,21 @@ window.addEventListener("scroll", () => {
     startCount();
 });
 //! Increment counter [End]
+
+//? animation on gallery images [Start]
+function scrollEffect(elements) {
+  elements.forEach((div) => {
+    const img = div.firstElementChild.firstElementChild;
+    img.style.transition = "1s";
+    let elementPosition = parseInt(img.getBoundingClientRect().top);
+    let scrollHeight = img.scrollHeight;
+    if (window.screenY + 500 >= elementPosition - scrollHeight) {
+      img.style.width = "100%";
+      setTimeout(() => (img.style.transition = ""), 1000);
+    } else {
+      img.style.width = "0";
+    }
+  });
+}
+window.addEventListener("scroll", () => scrollEffect(galleryImages));
+//? animation on gallery images [End]

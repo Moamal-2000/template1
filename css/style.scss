@@ -233,6 +233,7 @@ hr {
   animation-play-state: running;
   color: #c4c4c4;
 }
+
 /*? Color Theme [End] */
 
 
@@ -2470,13 +2471,16 @@ header .hover-section .other-links-container .item-content h2 {
   font-weight: lighter;
   font-size: 16px;
   left: 50%;
+  top: 100%;
   bottom: -25px;
-  width: fit-content;
+  width: 100px;
   transform: translateX(-50%);
   -webkit-transform: translateX(-50%);
   -moz-transform: translateX(-50%);
   -ms-transform: translateX(-50%);
   -o-transform: translateX(-50%);
+  display: flex;
+  justify-content: center;
 }
 
 .pricing-plans .container .card .below-part .features-content p {
@@ -2932,6 +2936,17 @@ header .hover-section .other-links-container .item-content h2 {
     font-size: 35px;
     white-space: nowrap;
   }
+}
+
+.discount .req-discount h2 span {
+  background-color: var(--color);
+  color: #fff;
+  padding: 10px 6px;
+  display: inline-block;
+}
+
+.discount .req-discount h2 span::selection {
+  background-color: white;
 }
 
 .discount .req-discount input,

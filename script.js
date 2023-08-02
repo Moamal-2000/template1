@@ -22,9 +22,10 @@ const colorGenerator = document.getElementById("color-generator"),
   labels = document.querySelectorAll(".label"),
   menu = document.querySelector(".hover-section"),
   otherLinksButton = document.querySelector(".other-links"),
-  closerHeader = document.querySelector(".close-header"),
   header = document.querySelector("header"),
-  closeOpenHeaderSound = new Audio("sounds-effect/header-sound.m4a");
+  closeOpenHeaderSound = new Audio("sounds-effect/header-sound.m4a"),
+  syncImgs = document.querySelectorAll('img:not([decoding="async"])');
+
 
 let switcher = false,
   colors = [
@@ -151,51 +152,6 @@ window.addEventListener("scroll", () => {
 });
 //! Our Skills Animation on scroll [End]
 
-//? Hide/Show Header [Start]
-function toggleHeader(moveTo) {
-  if (!switchHeader) {
-    closeOpenHeaderSound.play();
-    header.style.left = moveTo;
-    closerHeader.style.color = "#23fa23";
-    switchHeader = true;
-  } else {
-    closeOpenHeaderSound.play();
-    header.style.left = "0";
-    closerHeader.style.color = "#ff3434";
-    switchHeader = false;
-  }
-}
-
-closerHeader.addEventListener("click", () => {
-  if (innerWidth > 1400) {
-    toggleHeader("-97.7%");
-  } else if (innerWidth <= 1200 && innerWidth >= 992) {
-    toggleHeader("-96.6%");
-  } else if (innerWidth <= 992 && innerWidth >= 855) {
-    toggleHeader("-96%");
-  } else if (innerWidth <= 855 && innerWidth >= 700) {
-    toggleHeader("-95%");
-  } else if (innerWidth <= 700 && innerWidth >= 600) {
-    toggleHeader("-94%");
-  } else if (innerWidth <= 600 && innerWidth >= 510) {
-    toggleHeader("-93%");
-  } else if (innerWidth <= 610 && innerWidth > 388) {
-    toggleHeader("-92%");
-  } else if (innerWidth <= 388) {
-    toggleHeader("-90%");
-  }
-});
-
-closerHeader.addEventListener("mouseenter", () => {
-  closerHeader.style.color = "#ffff2e";
-});
-
-closerHeader.addEventListener("mouseout", () => {
-  if (!switchHeader) closerHeader.style.color = "#ff3434"; //red
-  else closerHeader.style.color = "#23fa23";
-});
-//? Hide/Show Header [End]
-
 //! Show Menu With Click [Start]
 menu.style.display = "none";
 otherLinksButton.onclick = () => {
@@ -256,20 +212,9 @@ window.addEventListener("scroll", () => {
 });
 //! Increment counter [End]
 
-//? animation on gallery images [Start]
-function scrollEffect(elements) {
-  elements.forEach((div) => {
-    const img = div.firstElementChild.firstElementChild;
-    img.style.transition = "1s";
-    let elementPosition = parseInt(img.getBoundingClientRect().top);
-    let scrollHeight = img.scrollHeight;
-    if (window.screenY + 500 >= elementPosition - scrollHeight) {
-      img.style.width = "100%";
-      setTimeout(() => (img.style.transition = ""), 1000);
-    } else {
-      img.style.width = "0";
-    }
-  });
-}
-window.addEventListener("scroll", () => scrollEffect(galleryImages));
-//? animation on gallery images [End]
+//* handle all images
+syncImgs.forEach((img) => {
+  img.setAttribute("decoding", "async");
+  img.setAttribute("width", "100%");
+  img.setAttribute("height", "100%");
+});

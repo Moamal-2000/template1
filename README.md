@@ -8,4 +8,4 @@ My First Website using HTML &amp; CSS &amp; lately I added Javascript
 
 Thanks.
 
-By Moamal Alaa.
+Wrote by Moamal Alaa.

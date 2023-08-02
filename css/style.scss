@@ -1,8 +1,5 @@
 /*! Global Rules [Start] */
-
-:root {
-  --skills-width: 0;
-}
+@use "../helpers/mixins" as *;
 
 * {
   padding: 0;
@@ -23,13 +20,15 @@ html {
 }
 
 body {
-  height: 100vh;
-  width: 100%;
   font-family: "Cairo", sans-serif;
-  position: relative;
+}
+
+h1 {
+  margin: 0;
 }
 
 :root {
+  --skills-width: 0;
   --main-color: #21b1f3;
   --color: #1787e0;
   --main-transition: 0.3s;
@@ -115,20 +114,16 @@ hr {
 
 /*? Color Theme [Start] */
 .color-generator {
+  background-color: #232323;
+  aspect-ratio: 1/1;
+  width: 130px;
   position: fixed;
   top: 180px;
   left: -130px;
-  background-color: #232323;
-  width: 130px;
-  height: 130px;
   padding: 10px;
-  border-radius: 0 5px 5px 0;
   z-index: 200;
-  transition: 0.5s;
-  -webkit-transition: 0.5s;
-  -moz-transition: 0.5s;
-  -ms-transition: 0.5s;
-  -o-transition: 0.5s;
+  @include prefix(border-radius, 0 5px 5px 0);
+  @include prefix(transition, left .5s)
 }
 
 .color-generator .colors-container {
@@ -141,88 +136,81 @@ hr {
 }
 
 .color-generator .colors-container div {
+  aspect-ratio: 1/1;
   width: 20px;
-  height: 20px;
   cursor: pointer;
-  border-radius: 50%;
   user-select: none;
+  @include prefix(border-radius, 50%)
 }
 
-.color-generator .colors-container .red-theme {
+.colors-container .red-theme {
   background-color: #ff4c4c;
 }
 
-.color-generator .colors-container .blue-theme {
+.colors-container .blue-theme {
   background-color: #00a2ee;
 }
 
-.color-generator .colors-container .green-theme {
+.colors-container .green-theme {
   background-color: #24e370;
 }
 
-.color-generator .colors-container .purple-theme {
+.colors-container .purple-theme {
   background-color: #721aff;
 }
 
-.color-generator .colors-container .yellow-theme {
+.colors-container .yellow-theme {
   background-color: #ffdd00;
 }
 
-.color-generator .colors-container .purple-pink-theme {
+.colors-container .purple-pink-theme {
   background-color: #ea00ff;
 }
 
-.color-generator .colors-container .pink-theme {
+.colors-container .pink-theme {
   background-color: #ff1a9c;
 }
 
-.color-generator .colors-container .orange-theme {
+.colors-container .orange-theme {
   background-color: #ffa31a;
 }
 
-.color-generator .colors-container .idk-name-theme {
+.colors-container .idk-name-theme {
   background-color: #7b82c8;
 }
 
-.color-generator .colors-container .black-theme {
+.colors-container .black-theme {
   background-color: #000;
 }
 
-.color-generator .colors-container .gray-theme {
+.colors-container .gray-theme {
   background-color: #caccd1;
 }
 
-.color-generator .tool-container {
+.tool-container {
   position: absolute;
-  right: -29px;
   top: 50%;
+  right: -29px;
+  translate: 0 -50%;
+  aspect-ratio: 1/1;
   width: 30px;
-  height: 30px;
-  transform: translateY(-50%);
   background-color: #232323;
-  border-radius: 0 5px 5px 0;
-  -webkit-transform: translateY(-50%);
-  -moz-transform: translateY(-50%);
-  -ms-transform: translateY(-50%);
-  -o-transform: translateY(-50%);
+  @include prefix(border-radius, 0 5px 5px 0)
 }
 
 .color-generator .tool-container i {
   position: absolute;
   right: -3%;
   top: -6%;
-  color: white;
+  color: #fff;
   font-size: 20px;
   padding: 6px;
   cursor: pointer;
-  animation-play-state: paused;
   user-select: none;
   display: block;
-  transition: 0.5s;
-  -webkit-transition: 0.5s;
-  -moz-transition: 0.5s;
-  -ms-transition: 0.5s;
-  -o-transition: 0.5s;
+  animation-play-state: paused;
+  @include prefix(transition, color .5s);
+
 }
 
 .color-generator .tool-container i:hover {
@@ -240,10 +228,10 @@ hr {
 
 /*! header .container [Start] */
 header {
-  height: fit-content;
-  box-shadow: 0 -2px 20px #80808089;
   background-color: #fffffff8;
-  width: 100%;
+  box-shadow: 0 -2px 20px #80808089;
+  padding: 10px;
+  width: 100vw;
   display: flex;
   justify-content: space-evenly;
   align-items: center;
@@ -251,49 +239,15 @@ header {
   top: 0;
   left: 0;
   z-index: 100;
-  transition: 1s;
-  -webkit-transition: 1s;
-  -moz-transition: 1s;
-  -ms-transition: 1s;
-  -o-transition: 1s;
+  @include prefix(transition, left 1s)
 }
 
 @media (max-width: 768px) {
   header {
     flex-direction: column;
     align-items: center;
+    padding: 0;
   }
-}
-
-header .close-header {
-  position: absolute;
-  right: 10px;
-  top: 50%;
-  width: 20px;
-  height: fit-content;
-  color: #ff3434;
-  font-size: 40px;
-  font-weight: bold;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  padding-bottom: 5px;
-  cursor: pointer;
-  user-select: none;
-  transform: translateY(-50%);
-  -webkit-transform: translateY(-50%);
-  -moz-transform: translateY(-50%);
-  -ms-transform: translateY(-50%);
-  -o-transform: translateY(-50%);
-  transition: color 0.3s;
-  -webkit-transition: color 0.3s;
-  -moz-transition: color 0.3s;
-  -ms-transition: color 0.3s;
-  -o-transition: color 0.3s;
-}
-
-header .close-header:hover {
-  color: #ffff2e;
 }
 
 header h1 a {
@@ -301,11 +255,7 @@ header h1 a {
   font-size: 25px;
   user-select: none;
   cursor: pointer;
-  transition: opacity var(--main-transition);
-  -webkit-transition: opacity var(--main-transition);
-  -moz-transition: opacity var(--main-transition);
-  -ms-transition: opacity var(--main-transition);
-  -o-transition: opacity var(--main-transition);
+  @include prefix(transition, opacity var(--main-transition))
 }
 
 @media (max-width: 768px) {
@@ -325,34 +275,29 @@ header nav ul {
   justify-content: center;
 }
 
-@media (max-width: 412px) {
-  header nav ul {
-    margin: 0;
-    padding: 0;
-  }
-}
-
-@media (max-width: 412px) {
-  header nav {
-    padding: 0;
-    margin: 0;
-    justify-content: center;
-  }
-}
-
 header nav ul li>a {
   font-size: 18px;
   font-weight: 400;
-  padding: 20px;
-  margin: 0;
+  padding: 10px 20px;
   cursor: pointer;
-  position: relative;
   user-select: none;
-  transition: var(--main-transition);
-  -webkit-transition: var(--main-transition);
-  -moz-transition: var(--main-transition);
-  -ms-transition: var(--main-transition);
-  -o-transition: var(--main-transition);
+  position: relative;
+  @include prefix(transition, background-color var(--main-transition));
+}
+
+header nav ul li:hover>a {
+  background-color: #6dbdff0a;
+}
+
+@media (max-width: 768px) {
+  header nav ul li {
+    padding: 10px 0;
+  }
+
+  header nav ul li>a {
+    font-size: 15px;
+    padding: 3px;
+  }
 }
 
 header nav ul li>a::before {
@@ -362,15 +307,7 @@ header nav ul li>a::before {
   top: 0;
   width: 0;
   border-top: 4px solid var(--color);
-  transition: var(--main-transition);
-  -webkit-transition: var(--main-transition);
-  -moz-transition: var(--main-transition);
-  -ms-transition: var(--main-transition);
-  -o-transition: var(--main-transition);
-}
-
-header nav ul li:hover>a {
-  background-color: #6dbdff0a;
+  @include prefix(transition, (color var(--main-transition), width var(--main-transition)))
 }
 
 header nav ul li:hover>a::before {
@@ -378,56 +315,29 @@ header nav ul li:hover>a::before {
   width: 100%;
 }
 
-@media (max-width: 768px) {
-  header nav ul li a {
-    font-size: 15px;
-    padding: 10px;
-  }
-}
-
-@media (max-width: 768px) {
-  header nav ul li {
-    padding: 5px 0;
-    padding-bottom: 30px;
-    height: 0;
-  }
-}
-
 header nav ul li .hover-section {
   width: 1150px;
   height: 350px;
   background-color: #fffffff8;
-  position: absolute;
-  left: 50%;
-  top: 72px;
   border-bottom: solid var(--color);
+  position: absolute;
+  top: 56px;
+  left: 50%;
+  translate: -50% 0;
   padding: 20px;
-  display: none;
   z-index: 100;
   user-select: none;
-  transform: translateX(-50%);
-  -webkit-transform: translateX(-50%);
-  -moz-transform: translateX(-50%);
-  -ms-transform: translateX(-50%);
-  -o-transform: translateX(-50%);
-}
-
-@media (max-width: 1300px) {
-  header nav ul li .hover-section {
-    left: 50%;
-  }
+  display: none;
 }
 
 @media (max-width: 1200px) {
   header nav ul li .hover-section {
-    left: 50%;
     width: 1000px;
   }
 }
 
 @media (max-width: 1045px) {
   header nav ul li .hover-section {
-    left: 50%;
     width: 700px;
     height: fit-content;
     padding: 0;
@@ -437,16 +347,21 @@ header nav ul li .hover-section {
 @media (max-width: 768px) and (min-width: 591px) {
   header nav ul li .hover-section {
     width: 375px;
-    left: 52.2%;
-    top: 121px;
+    top: 90px;
   }
 }
 
 @media (max-width: 591px) {
   header nav ul li .hover-section {
-    top: 101px;
+    top: 90px;
     width: 408px;
     justify-content: center;
+  }
+}
+
+@media (max-width: 376px) {
+  header nav ul li .hover-section {
+    height: calc(100vh - 90px);
   }
 }
 
@@ -504,11 +419,12 @@ header .hover-section .other-links-container .item-content {
   display: flex;
   padding: 10px;
   padding-top: 13px;
+  width: 100%;
   height: 50px;
   border-bottom: 1px solid #80808033;
   cursor: pointer;
-  position: relative;
   color: var(--color);
+  position: relative;
 }
 
 header .hover-section .other-links-container .item-content::before {
@@ -519,25 +435,15 @@ header .hover-section .other-links-container .item-content::before {
   width: 0;
   height: 100%;
   background-color: #5e6f7d0d;
-  transition: calc(var(--main-transition) + 0.1s);
-  -webkit-transition: calc(var(--main-transition) + 0.1s);
-  -moz-transition: calc(var(--main-transition) + 0.1s);
-  -ms-transition: calc(var(--main-transition) + 0.1s);
-  -o-transition: calc(var(--main-transition) + 0.1s);
-}
-
-@media (max-width: 591px) {
-  header .hover-section .other-links-container .item-content {
-    width: 75%;
-  }
-}
-
-header .hover-section .other-links-container .item-content i {
-  margin-right: 18px;
+  @include prefix(transition, width calc(var(--main-transition) + 0.1s))
 }
 
 header .hover-section .other-links-container .item-content:hover::before {
   width: 100%;
+}
+
+header .hover-section .other-links-container .item-content i {
+  margin-right: 18px;
 }
 
 header .hover-section .other-links-container .item-content h2 {
@@ -554,14 +460,10 @@ header .hover-section .other-links-container .item-content h2 {
   width: 100%;
   height: 700px;
   z-index: -10;
+  @include prefix(transform, skewY(-6deg));
   position: absolute;
   left: 0;
   top: -80px;
-  transform: skewY(-6deg);
-  -webkit-transform: skewY(-6deg);
-  -moz-transform: skewY(-6deg);
-  -ms-transform: skewY(-6deg);
-  -o-transform: skewY(-6deg);
 }
 
 .landing-container {
@@ -576,9 +478,7 @@ header .hover-section .other-links-container .item-content h2 {
 }
 
 .landing-container .container {
-  display: flex;
-  justify-content: center;
-  align-items: center;
+  @include center-x-y;
   margin-top: 50px;
 }
 
@@ -684,11 +584,7 @@ header .hover-section .other-links-container .item-content h2 {
   user-select: none;
   animation: arrow-down-animation 2s infinite;
   -webkit-animation: arrow-down-animation 2s infinite;
-  transform: translateX(-50%);
-  -webkit-transform: translateX(-50%);
-  -moz-transform: translateX(-50%);
-  -ms-transform: translateX(-50%);
-  -o-transform: translateX(-50%);
+  @include prefix(transform, translateX(-50%))
 }
 
 /*? Landing section [End] */
@@ -709,19 +605,13 @@ header .hover-section .other-links-container .item-content h2 {
   z-index: 1;
   cursor: pointer;
   user-select: none;
-  margin: 0 auto;
-  margin-top: var(--margin-top-title);
-  margin-bottom: var(--margin-bottom-title);
+  margin: var(--margin-top-title) auto var(--margin-bottom-title);
 }
 
 .main-title:hover {
   color: white;
   border: solid 2px transparent;
-  transition: 0.5s 0.3s;
-  -webkit-transition: 0.5s 0.3s;
-  -moz-transition: 0.5s 0.3s;
-  -ms-transition: 0.5s 0.3s;
-  -o-transition: 0.5s 0.3s;
+  @include prefix(transition, (color 0.5s 0.3s, border 0.5s 0.3s))
 }
 
 .main-title::before,
@@ -730,15 +620,11 @@ header .hover-section .other-links-container .item-content h2 {
   position: absolute;
   top: 50%;
   width: 12px;
-  height: 12px;
+  aspect-ratio: 1/1;
   background-color: var(--color);
   border-radius: 50%;
   z-index: -10;
-  transform: translateY(-50%);
-  -webkit-transform: translateY(-50%);
-  -moz-transform: translateY(-50%);
-  -ms-transform: translateY(-50%);
-  -o-transform: translateY(-50%);
+  @include prefix(transform, translateY(-50%))
 }
 
 .main-title::before {
@@ -765,10 +651,8 @@ header .hover-section .other-links-container .item-content h2 {
 
 /*? Articles [Start] */
 .main-articles {
-  margin: 0 auto;
+  margin: 100px auto 25px;
   width: 1200px;
-  margin-top: 100px;
-  padding-left: 25px;
 }
 
 @media (max-width: 1200px) {
@@ -876,18 +760,15 @@ header .hover-section .other-links-container .item-content h2 {
   height: 400px;
   border-radius: 7px;
   box-shadow: 0 0 10px #dfdfdf;
-  margin-top: 10px;
   overflow: hidden;
-  transition: box-shadow var(--main-transition), margin var(--main-transition);
-  -webkit-transition: box-shadow var(--main-transition), margin var(--main-transition);
-  -moz-transition: box-shadow var(--main-transition), margin var(--main-transition);
-  -ms-transition: box-shadow var(--main-transition), margin var(--main-transition);
-  -o-transition: box-shadow var(--main-transition), margin var(--main-transition);
+  position: relative;
+  top: 0;
+  @include prefix(transition, (box-shadow var(--main-transition), top var(--main-transition)))
 }
 
 .main-articles .container .card:hover {
   box-shadow: 0 0 10px #939393;
-  margin-top: 0;
+  top: -10px;
 }
 
 @media (max-width: 1200px) {
@@ -944,14 +825,14 @@ header .hover-section .other-links-container .item-content h2 {
 
 .main-articles .container .card .text .box {
   width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
 }
 
 @media (max-width: 768px) {
   .main-articles .container .card .text .box {
     width: 100%;
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
   }
 }
 
@@ -972,32 +853,13 @@ header .hover-section .other-links-container .item-content h2 {
 .main-articles .container .card .text .box i {
   color: var(--color);
   user-select: none;
-  transform: translateX(800%);
-  -webkit-transform: translateX(800%);
-  -moz-transform: translateX(800%);
-  -ms-transform: translateX(800%);
-  -o-transform: translateX(800%);
+  position: relative;
+  left: 0;
 }
 
 .main-articles .container .card:hover .text .box i {
   animation: moving-arrow 0.7s infinite;
   -webkit-animation: moving-arrow 0.7s infinite;
-}
-
-@media (max-width: 768px) {
-  .main-articles .container .card .text .box i {
-    margin-right: 20px;
-    transform: translateX(0);
-    -webkit-transform: translateX(0);
-    -moz-transform: translateX(0);
-    -ms-transform: translateX(0);
-    -o-transform: translateX(0);
-  }
-
-  .main-articles .container .card:hover .text .box i {
-    animation: moving-arrow-mobile 0.7s infinite;
-    -webkit-animation: moving-arrow-mobile 0.7s infinite;
-  }
 }
 
 /*? Articles [End] */
@@ -1011,14 +873,11 @@ header .hover-section .other-links-container .item-content h2 {
 
 .gallery .container {
   position: relative;
-  background: #e5e5e5;
   width: 100%;
   height: fit-content;
-  margin-top: 100px;
+  margin: 100px auto;
+  background: #e5e5e5;
   border: solid 1px transparent;
-  margin: 0 auto;
-  margin-top: 100px;
-  padding-bottom: 100px;
 }
 
 .gallery .container::after {
@@ -1027,7 +886,6 @@ header .hover-section .other-links-container .item-content h2 {
   right: 0;
   left: 1px;
   bottom: 100%;
-  display: block;
   height: 30px;
   background-size: 30px 100%;
   background-image: linear-gradient(310deg, #e5e5e5 30%, transparent 30%),
@@ -1063,11 +921,9 @@ header .hover-section .other-links-container .item-content h2 {
 }
 
 .gallery .container .boxes-container .main-box {
-  background-color: white;
-  display: flex;
-  justify-content: center;
-  align-items: center;
   box-shadow: 0 0 10px #80808080;
+  background-color: #fff;
+  @include center-x-y;
   cursor: pointer;
 }
 
@@ -1083,15 +939,11 @@ header .hover-section .other-links-container .item-content h2 {
   position: absolute;
   left: 50%;
   top: 50%;
+  @include prefix(transform, translate(-50%, -50%));
   width: 10%;
   height: 10%;
   background-color: #f0f0f083;
   z-index: -1;
-  transform: translate(-50%, -50%);
-  -webkit-transform: translate(-50%, -50%);
-  -moz-transform: translate(-50%, -50%);
-  -ms-transform: translate(-50%, -50%);
-  -o-transform: translate(-50%, -50%);
 }
 
 .gallery .container .boxes-container .main-box:hover .box::before {
@@ -1100,20 +952,12 @@ header .hover-section .other-links-container .item-content h2 {
 }
 
 .gallery .container .boxes-container .main-box:hover img {
-  transform: rotate(5deg) scale(1.1);
-  -webkit-transform: rotate(5deg) scale(1.1);
-  -moz-transform: rotate(5deg) scale(1.1);
-  -ms-transform: rotate(5deg) scale(1.1);
-  -o-transform: rotate(5deg) scale(1.1);
+  @include prefix(transform, rotate(5deg) scale(1.1));
 }
 
 .gallery .container .boxes-container .main-box img {
   width: 100%;
-  transition: transform var(--main-transition);
-  -webkit-transition: transform var(--main-transition);
-  -moz-transition: transform var(--main-transition);
-  -ms-transition: transform var(--main-transition);
-  -o-transition: transform var(--main-transition);
+  @include prefix(transition, transform var(--main-transition));
 }
 
 .popup-overlay {
@@ -1136,11 +980,7 @@ header .hover-section .other-links-container .item-content h2 {
   z-index: 1001;
   width: 700px;
   height: 650px;
-  transform: translate(-50%, -50%);
-  -webkit-transform: translate(-50%, -50%);
-  -moz-transform: translate(-50%, -50%);
-  -ms-transform: translate(-50%, -50%);
-  -o-transform: translate(-50%, -50%);
+  @include prefix(transform, translate(-50%, -50%));
 }
 
 .popup-box img {
@@ -2253,11 +2093,11 @@ header .hover-section .other-links-container .item-content h2 {
   }
 }
 
-.latest-events .container form .email-container {
+.latest-events .email-container {
   position: relative;
 }
 
-.latest-events .container form .email-container input:first-child {
+.latest-events .email-container input:first-child {
   border: solid 40px #f6f5f5;
   border-radius: 60px;
   padding: 20px;
@@ -2267,7 +2107,7 @@ header .hover-section .other-links-container .item-content h2 {
   caret-color: var(--color);
 }
 
-.latest-events .container form .email-container input[type="submit"] {
+.latest-events .email-container input[type=submit] {
   position: absolute;
   right: -20%;
   top: 0;
@@ -2290,8 +2130,8 @@ header .hover-section .other-links-container .item-content h2 {
 
 @media (max-width: 991px) {
 
-  .latest-events .container form .email-container input:first-child,
-  .latest-events .container form .email-container input[type="submit"] {
+  .latest-events .email-container input:first-child,
+  .latest-events .email-container input[type="submit"] {
     border-radius: 0;
     border-width: 20px;
   }
@@ -2299,15 +2139,15 @@ header .hover-section .other-links-container .item-content h2 {
 
 @media (max-width: 818px) {
 
-  .latest-events .container form .email-container input:first-child,
-  .latest-events .container form .email-container input[type="submit"] {
+  .latest-events .email-container input:first-child,
+  .latest-events .email-container input[type="submit"] {
     border-radius: 0;
     border-width: 20px;
   }
 }
 
 @media (max-width: 680px) {
-  .latest-events .container form .email-container input[type="submit"] {
+  .latest-events .email-container input[type="submit"] {
     left: 50%;
     top: 80%;
     width: 100%;
@@ -2317,15 +2157,13 @@ header .hover-section .other-links-container .item-content h2 {
     -ms-transform: translateX(-50%);
     -o-transform: translateX(-50%);
   }
-}
 
-@media (max-width: 730px) {
-  .latest-events .container form .email-container input:first-child {
-    width: 400px;
+  .latest-events .email-container input:first-child {
+    width: 100%;
   }
 }
 
-.latest-events .container form .email-container input[type="submit"]:hover {
+.latest-events .email-container input[type="submit"]:hover {
   background-color: var(--color);
 }
 
@@ -3309,19 +3147,11 @@ footer .container-made-by h4>span::before {
 
   0%,
   100% {
-    transform: translateX(760%);
-    -webkit-transform: translateX(760%);
-    -moz-transform: translateX(760%);
-    -ms-transform: translateX(760%);
-    -o-transform: translateX(760%);
+    left: 0;
   }
 
   50% {
-    transform: translateX(800%);
-    -webkit-transform: translateX(800%);
-    -moz-transform: translateX(800%);
-    -ms-transform: translateX(800%);
-    -o-transform: translateX(800%);
+    left: 6px;
   }
 }
 

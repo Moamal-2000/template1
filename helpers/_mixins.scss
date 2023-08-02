@@ -1,0 +1,22 @@
+@mixin center-x-y {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+@mixin transition($property, $duration, $delay: 0s) {
+  transition: $property $duration $delay;
+  -webkit-transition: $property $duration $delay;
+  -moz-transition: $property $duration $delay;
+  -ms-transition: $property $duration $delay;
+  -o-transition: $property $duration $delay;
+}
+
+@mixin prefix($property, $value) {
+
+  -webkit-#{$property}: $value;
+  -moz-#{$property}: $value;
+  -o-#{$property}: $value;
+  -ms-#{$property}: $value;
+  $property: $value;
+}

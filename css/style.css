@@ -211,7 +211,7 @@ hr {
   right: -3%;
   top: -6%;
   color: #fff;
-  font-size: 20px;
+  font-size: 1.25rem;
   padding: 6px;
   cursor: pointer;
   -webkit-user-select: none;
@@ -267,7 +267,7 @@ header h1 {
 
 header h1 a {
   color: var(--color);
-  font-size: 25px;
+  font-size: 1.5625rem;
   -webkit-user-select: none;
      -moz-user-select: none;
           user-select: none;
@@ -295,7 +295,7 @@ header nav ul {
 }
 
 header nav ul li > a {
-  font-size: 18px;
+  font-size: 1.125rem;
   font-weight: 400;
   padding: 10px 20px;
   cursor: pointer;
@@ -318,7 +318,7 @@ header nav ul li:hover > a {
     padding: 10px 0;
   }
   header nav ul li > a {
-    font-size: 15px;
+    font-size: 0.9375rem;
     padding: 3px;
   }
 }
@@ -468,7 +468,7 @@ header .hover-section .other-links-container .item-content i {
 }
 
 header .hover-section .other-links-container .item-content h2 {
-  font-size: 18px;
+  font-size: 1.125rem;
 }
 
 /*! header .container [End] */
@@ -533,33 +533,33 @@ header .hover-section .other-links-container .item-content h2 {
   }
 }
 .landing-container .text h2 {
-  font-size: 40px;
+  font-size: 2.5rem;
   letter-spacing: -2px;
   margin-bottom: 10px;
 }
 
 @media (max-width: 460px) {
   .landing-container .text h2 {
-    font-size: 30px;
+    font-size: 1.875rem;
   }
   .landing-container .text h1 {
-    font-size: 28px;
+    font-size: 1.75rem;
   }
 }
 .landing-container .text p {
   color: #666;
-  font-size: 23px;
+  font-size: 1.4375rem;
   line-height: var(--main-line-height-paragraph);
 }
 
 @media (max-width: 460px) {
   .landing-container .text p {
-    font-size: 15px;
+    font-size: 0.9375rem;
   }
 }
 @media (max-width: 768px) and (min-width: 460px) {
   .landing-container .text p {
-    font-size: 18px;
+    font-size: 1.125rem;
   }
 }
 .landing-container .landing-img {
@@ -612,7 +612,7 @@ header .hover-section .other-links-container .item-content h2 {
   --margin-top-title: 100px;
   --margin-bottom-title: 80px;
   font-weight: 700;
-  font-size: 30px;
+  font-size: 1.875rem;
   text-transform: uppercase;
   border: solid 2px black;
   width: -moz-fit-content;
@@ -832,7 +832,7 @@ header .hover-section .other-links-container .item-content h2 {
 .main-articles .card .text p {
   color: #666;
   line-height: var(--main-line-height-paragraph);
-  font-size: 15px;
+  font-size: 0.9375rem;
   width: 80%;
 }
 
@@ -859,7 +859,7 @@ header .hover-section .other-links-container .item-content h2 {
   -webkit-user-select: none;
      -moz-user-select: none;
           user-select: none;
-  font-size: 19px;
+  font-size: 1.1875rem;
 }
 
 @media (max-width: 768px) {
@@ -1134,7 +1134,7 @@ header .hover-section .other-links-container .item-content h2 {
 }
 
 .features .card .text-container h2 {
-  font-size: 40px;
+  font-size: 2.5rem;
   width: -moz-fit-content;
   width: fit-content;
   margin: 10px auto 0;
@@ -1168,7 +1168,7 @@ header .hover-section .other-links-container .item-content h2 {
 .features .card .text-container p {
   color: var(--main-paragraph-color);
   text-align: center;
-  font-size: 20px;
+  font-size: 1.25rem;
   line-height: var(--main-line-height-paragraph);
   width: 90%;
   margin: 50px auto 20px;
@@ -1183,7 +1183,7 @@ header .hover-section .other-links-container .item-content h2 {
   color: #f44036;
   border: solid 3px #f44036;
   border-radius: 5px;
-  font-size: 22px;
+  font-size: 1.375rem;
   font-weight: 700;
   padding: 8px 25px;
   background-color: white;
@@ -1318,7 +1318,7 @@ header .hover-section .other-links-container .item-content h2 {
   }
 }
 .testimonials .card h2 {
-  font-size: 20px;
+  font-size: 1.25rem;
   -webkit-user-select: text;
      -moz-user-select: text;
           user-select: text;
@@ -1327,7 +1327,7 @@ header .hover-section .other-links-container .item-content h2 {
 .testimonials .card h3 {
   color: #373737;
   font-weight: normal;
-  font-size: 17px;
+  font-size: 1.0625rem;
   margin: 10px 0;
   -webkit-user-select: text;
      -moz-user-select: text;
@@ -1497,7 +1497,7 @@ header .hover-section .other-links-container .item-content h2 {
 }
 .team-members .card .first-part .social-media-icons i {
   color: var(--main-paragraph-color);
-  font-size: 16px;
+  font-size: 1rem;
   width: 20px;
   height: 20px;
   cursor: pointer;
@@ -1535,7 +1535,7 @@ header .hover-section .other-links-container .item-content h2 {
 
 .team-members .card .second-part h3 {
   color: var(--color);
-  font-size: 22px;
+  font-size: 1.375rem;
   margin: 16px 0;
 }
 
@@ -1625,7 +1625,7 @@ header .hover-section .other-links-container .item-content h2 {
 .services .cards-container .card .main h3 {
   color: var(--color);
   margin-bottom: 40px;
-  font-size: 25px;
+  font-size: 1.5625rem;
 }
 
 .services .cards-container .card .footer {
@@ -1640,7 +1640,7 @@ header .hover-section .other-links-container .item-content h2 {
   display: block;
   background-color: var(--color);
   color: white;
-  font-size: 30px;
+  font-size: 1.875rem;
   font-weight: 700;
   padding: 8px 20px;
   position: relative;
@@ -1726,7 +1726,7 @@ header .hover-section .other-links-container .item-content h2 {
   }
 }
 .our-skills .skills-container h3 {
-  font-size: 18px;
+  font-size: 1.125rem;
 }
 
 .our-skills .skills-container .label {
@@ -1756,7 +1756,7 @@ header .hover-section .other-links-container .item-content h2 {
   top: -44px;
   border: solid 1px #b1b1b1;
   background-color: white;
-  font-size: 15px;
+  font-size: 0.9375rem;
   color: var(--color);
   border-radius: 5px;
   font-weight: bold;
@@ -1889,7 +1889,7 @@ header .hover-section .other-links-container .item-content h2 {
 }
 .how-it-works .card .info h3 {
   margin-bottom: 10px;
-  font-size: 22px;
+  font-size: 1.375rem;
 }
 
 @media (max-width: 668px) {
@@ -1903,7 +1903,7 @@ header .hover-section .other-links-container .item-content h2 {
 .how-it-works .card .info p {
   color: var(--main-paragraph-color);
   line-height: var(--main-line-height-paragraph);
-  font-size: 20px;
+  font-size: 1.25rem;
 }
 
 /*! How it Works [End] */
@@ -1955,7 +1955,7 @@ header .hover-section .other-links-container .item-content h2 {
 
 .latest-events .main-part .info .timer span {
   color: var(--color);
-  font-size: 30px;
+  font-size: 1.875rem;
   font-weight: bold;
   border: solid 1px #dedede;
   padding: 10px;
@@ -1982,7 +1982,7 @@ header .hover-section .other-links-container .item-content h2 {
   width: 100%;
   border-top: solid 1px #dedede;
   color: black;
-  font-size: 12px;
+  font-size: 0.75rem;
   font-weight: lighter;
   display: flex;
   justify-content: center;
@@ -2020,12 +2020,12 @@ header .hover-section .other-links-container .item-content h2 {
 }
 
 .latest-events .main-part .info .text h3 {
-  font-size: 28px;
+  font-size: 1.75rem;
   margin: 30px 0 20px;
 }
 
 .latest-events .main-part .info .text p {
-  font-size: 18px;
+  font-size: 1.125rem;
   color: var(--main-paragraph-color);
   line-height: var(--main-line-height-paragraph);
   width: 80%;
@@ -2081,7 +2081,7 @@ header .hover-section .other-links-container .item-content h2 {
   padding: 20px;
   background-color: var(--color);
   color: white;
-  font-size: 19px;
+  font-size: 1.1875rem;
   letter-spacing: 0.5px;
   font-weight: bold;
   cursor: pointer;
@@ -2195,7 +2195,7 @@ header .hover-section .other-links-container .item-content h2 {
   top: -50px;
   color: white;
   font-weight: bold;
-  font-size: 18px;
+  font-size: 1.125rem;
   letter-spacing: 1px;
   display: flex;
   align-items: center;
@@ -2236,7 +2236,7 @@ header .hover-section .other-links-container .item-content h2 {
 }
 
 .pricing-plans .card .above-part h2 {
-  font-size: 24px;
+  font-size: 1.5rem;
   font-weight: bold;
 }
 
@@ -2247,7 +2247,7 @@ header .hover-section .other-links-container .item-content h2 {
 
 .pricing-plans .card .above-part .price {
   color: var(--color);
-  font-size: 60px;
+  font-size: 3.75rem;
   font-weight: bold;
   position: relative;
 }
@@ -2257,7 +2257,7 @@ header .hover-section .other-links-container .item-content h2 {
   position: absolute;
   color: var(--main-paragraph-color);
   font-weight: lighter;
-  font-size: 16px;
+  font-size: 1rem;
   left: 50%;
   top: 100%;
   bottom: -25px;
@@ -2271,7 +2271,7 @@ header .hover-section .other-links-container .item-content h2 {
 }
 
 .pricing-plans .card .below-part .features-content p {
-  font-size: 18px;
+  font-size: 1.125rem;
   font-weight: 400;
   color: #585858;
   padding: 20px;
@@ -2371,12 +2371,12 @@ header .hover-section .other-links-container .item-content h2 {
 }
 
 .top-videos .top-videos-menu .header h3 {
-  font-size: 17px;
+  font-size: 1.0625rem;
   color: #404040;
 }
 
 .top-videos .top-videos-menu .header i {
-  font-size: 18px;
+  font-size: 1.125rem;
   cursor: pointer;
   -webkit-transition: color var(--main-transition);
   -moz-transition: color var(--main-transition);
@@ -2511,7 +2511,7 @@ header .hover-section .other-links-container .item-content h2 {
   }
 }
 .stats .title {
-  font-size: 40px;
+  font-size: 2.5rem;
   padding: 100px 0 50px;
   width: -moz-fit-content;
   width: fit-content;
@@ -2582,7 +2582,7 @@ header .hover-section .other-links-container .item-content h2 {
 }
 
 .stats .box span:nth-child(2) {
-  font-size: 50px;
+  font-size: 3.125rem;
   padding: 20px 0;
   font-weight: bold;
   color: #3e3e3e;
@@ -2598,7 +2598,7 @@ header .hover-section .other-links-container .item-content h2 {
 
 .stats .box span:nth-child(3) {
   color: var(--color);
-  font-size: 20px;
+  font-size: 1.25rem;
   font-weight: bold;
   font-style: italic;
 }
@@ -2644,18 +2644,18 @@ header .hover-section .other-links-container .item-content h2 {
 }
 
 .discount .info-discount h2 {
-  font-size: 40px;
+  font-size: 2.5rem;
   margin-top: 100px;
   letter-spacing: -2px;
 }
 
 @media (max-width: 412px) {
   .discount .info-discount h2 {
-    font-size: 35px;
+    font-size: 2.1875rem;
   }
 }
 .discount .info-discount p {
-  font-size: 20px;
+  font-size: 1.25rem;
   line-height: var(--main-line-height-paragraph);
   margin: 50px auto;
   width: 80%;
@@ -2663,7 +2663,7 @@ header .hover-section .other-links-container .item-content h2 {
 
 @media (max-width: 412px) {
   .discount .info-discount p {
-    font-size: 17px;
+    font-size: 1.0625rem;
   }
 }
 .discount .info-discount img {
@@ -2691,13 +2691,13 @@ header .hover-section .other-links-container .item-content h2 {
   }
 }
 .discount .req-discount h2 {
-  font-size: 40px;
+  font-size: 2.5rem;
   letter-spacing: -2px;
 }
 
 @media (max-width: 436px) {
   .discount .req-discount h2 {
-    font-size: 35px;
+    font-size: 2.1875rem;
     white-space: nowrap;
   }
 }
@@ -2736,7 +2736,7 @@ header .hover-section .other-links-container .item-content h2 {
   background-color: var(--color);
   color: white;
   text-align: center;
-  font-size: 20px;
+  font-size: 1.25rem;
   font-weight: bold;
   cursor: pointer;
   -webkit-transition: background-color var(--main-transition);
@@ -2772,7 +2772,7 @@ footer .container {
 }
 footer .contact-me h3 {
   color: white;
-  font-size: 50px;
+  font-size: 3.125rem;
 }
 
 @media (max-width: 412px) {
@@ -2799,7 +2799,7 @@ footer .contact-me .social-media a i {
   color: #b9b9b9;
   padding: 15px;
   text-align: center;
-  font-size: 20px;
+  font-size: 1.25rem;
   -webkit-user-select: none;
      -moz-user-select: none;
           user-select: none;
@@ -2848,7 +2848,7 @@ footer .contact-me p {
   }
 }
 footer .links-container ul li {
-  font-size: 15px;
+  font-size: 0.9375rem;
   font-weight: normal;
   position: relative;
   padding: 15px 0;
@@ -2889,13 +2889,13 @@ footer .info-about-me .line {
 }
 
 footer .info-about-me .line i {
-  font-size: 25px;
+  font-size: 1.5625rem;
   margin-right: 10px;
   color: var(--color);
 }
 
 footer .info-about-me .line p {
-  font-size: 16px;
+  font-size: 1rem;
   line-height: 2;
 }
 
@@ -2940,7 +2940,7 @@ footer hr {
 footer .container-made-by h4 {
   color: white;
   font-weight: normal;
-  font-size: 17px;
+  font-size: 1.0625rem;
   text-align: center;
   letter-spacing: 0.7px;
 }
@@ -2966,7 +2966,7 @@ footer .container-made-by h4 > span::before {
   position: absolute;
   left: -35px;
   top: 6px;
-  font-size: 22px;
+  font-size: 1.375rem;
 }
 
 @media (max-width: 412px) {

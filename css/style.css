@@ -261,6 +261,10 @@ header {
     padding: 0;
   }
 }
+header h1 {
+  margin: 0;
+}
+
 header h1 a {
   color: var(--color);
   font-size: 25px;
@@ -669,7 +673,7 @@ header .hover-section .other-links-container .item-content h2 {
 /*? Articles [Start] */
 .main-articles {
   margin: 100px auto 25px;
-  width: 1200px;
+  width: 1150px;
 }
 
 @media (max-width: 1200px) {
@@ -1285,7 +1289,6 @@ header .hover-section .other-links-container .item-content h2 {
   -o-transition: transform var(--main-transition);
   -ms-transition: transform var(--main-transition);
 }
-
 .testimonials .card:hover {
   -webkit-transform: scale(1.02);
   -moz-transform: scale(1.02);
@@ -1405,10 +1408,6 @@ header .hover-section .other-links-container .item-content h2 {
   -webkit-user-select: none;
      -moz-user-select: none;
           user-select: none;
-  -webkit-transition: var(--main-transition);
-  -moz-transition: var(--main-transition);
-  -o-transition: var(--main-transition);
-  -ms-transition: var(--main-transition);
 }
 
 .team-members .card::before {
@@ -1421,10 +1420,10 @@ header .hover-section .other-links-container .item-content h2 {
   background-color: rgba(128, 128, 128, 0.0784313725);
   border-radius: 10px;
   z-index: 1;
-  -webkit-transition: var(--main-transition);
-  -moz-transition: var(--main-transition);
-  -o-transition: var(--main-transition);
-  -ms-transition: var(--main-transition);
+  -webkit-transition: width var(--main-transition);
+  -moz-transition: width var(--main-transition);
+  -o-transition: width var(--main-transition);
+  -ms-transition: width var(--main-transition);
 }
 
 .team-members .card:hover:before {
@@ -1459,10 +1458,10 @@ header .hover-section .other-links-container .item-content h2 {
   position: relative;
   left: -20%;
   z-index: 2;
-  -webkit-transition: var(--main-transition);
-  -moz-transition: var(--main-transition);
-  -o-transition: var(--main-transition);
-  -ms-transition: var(--main-transition);
+  -webkit-transition: filter var(--main-transition);
+  -moz-transition: filter var(--main-transition);
+  -o-transition: filter var(--main-transition);
+  -ms-transition: filter var(--main-transition);
 }
 
 .team-members .card:hover .first-part .image img {
@@ -1498,11 +1497,15 @@ header .hover-section .other-links-container .item-content h2 {
 }
 .team-members .card .first-part .social-media-icons i {
   color: var(--main-paragraph-color);
-  font-size: 15px;
+  font-size: 16px;
   width: 20px;
   height: 20px;
   cursor: pointer;
   z-index: 3;
+  -webkit-transition: color 0.3s;
+  -moz-transition: color 0.3s;
+  -o-transition: color 0.3s;
+  -ms-transition: color 0.3s;
 }
 
 @media (max-width: 412px) {
@@ -1544,11 +1547,8 @@ header .hover-section .other-links-container .item-content h2 {
   width: 100%;
   height: -moz-fit-content;
   height: fit-content;
-  margin-top: 100px;
   border: solid 1px transparent;
-  margin: 0 auto;
-  margin-top: 100px;
-  padding-bottom: 100px;
+  margin: 100px auto;
 }
 
 .services .container::before {
@@ -1576,10 +1576,16 @@ header .hover-section .other-links-container .item-content h2 {
   background-color: white;
   box-shadow: 0 0 10px rgba(128, 128, 128, 0.4470588235);
   position: relative;
-  -webkit-transition: var(--main-transition);
-  -moz-transition: var(--main-transition);
-  -o-transition: var(--main-transition);
-  -ms-transition: var(--main-transition);
+  -webkit-transition: transform var(--main-transition);
+  -moz-transition: transform var(--main-transition);
+  -o-transition: transform var(--main-transition);
+  -ms-transition: transform var(--main-transition);
+}
+.services .cards-container .card:hover {
+  -webkit-transform: translateY(-10px);
+  -moz-transform: translateY(-10px);
+  -o-transform: translateY(-10px);
+  -ms-transform: translateY(-10px);
 }
 
 .services .cards-container .card::before {
@@ -1598,13 +1604,6 @@ header .hover-section .other-links-container .item-content h2 {
   -moz-transition: width var(--main-transition), transform var(--main-transition);
   -o-transition: width var(--main-transition), transform var(--main-transition);
   -ms-transition: width var(--main-transition), transform var(--main-transition);
-}
-
-.services .cards-container .card:hover {
-  -webkit-transform: translateY(-10px);
-  -moz-transform: translateY(-10px);
-  -o-transform: translateY(-10px);
-  -ms-transform: translateY(-10px);
 }
 
 .services .cards-container .card:hover:before {
@@ -1638,11 +1637,11 @@ header .hover-section .other-links-container .item-content h2 {
 }
 
 .services .cards-container .card .footer span {
-  color: white;
+  display: block;
   background-color: var(--color);
+  color: white;
   font-size: 30px;
   font-weight: 700;
-  display: block;
   padding: 8px 20px;
   position: relative;
   z-index: 1;
@@ -1655,12 +1654,8 @@ header .hover-section .other-links-container .item-content h2 {
   top: 0;
   width: 40px;
   height: 100%;
-  background-color: var(--color);
   z-index: -1;
-  -webkit-transition: var(--main-transition);
-  -moz-transition: var(--main-transition);
-  -o-transition: var(--main-transition);
-  -ms-transition: var(--main-transition);
+  background-color: var(--color);
   -webkit-transform: skewX(-30deg);
   -moz-transform: skewX(-30deg);
   -o-transform: skewX(-30deg);
@@ -1748,10 +1743,10 @@ header .hover-section .other-links-container .item-content h2 {
   background-color: var(--color);
   height: 100%;
   width: 0;
-  -webkit-transition: 1s;
-  -moz-transition: 1s;
-  -o-transition: 1s;
-  -ms-transition: 1s;
+  -webkit-transition: width 1s;
+  -moz-transition: width 1s;
+  -o-transition: width 1s;
+  -ms-transition: width 1s;
 }
 
 .our-skills .skills-container .label::after {
@@ -1821,8 +1816,8 @@ header .hover-section .other-links-container .item-content h2 {
 
 .how-it-works .card {
   background-color: #f6f5f5;
-  padding: 30px;
   border: solid 3px white;
+  padding: 30px;
   border-radius: 6px;
   display: flex;
   position: relative;
@@ -1862,7 +1857,7 @@ header .hover-section .other-links-container .item-content h2 {
   -ms-transition: width var(--main-transition), height var(--main-transition);
 }
 
-.how-it-works .card:hover:before {
+.how-it-works .card:hover::before {
   width: 100%;
   height: 100%;
 }
@@ -1893,7 +1888,7 @@ header .hover-section .other-links-container .item-content h2 {
   }
 }
 .how-it-works .card .info h3 {
-  margin: 0 0 10px;
+  margin-bottom: 10px;
   font-size: 22px;
 }
 
@@ -1938,6 +1933,7 @@ header .hover-section .other-links-container .item-content h2 {
 }
 .latest-events .main-part .image img {
   max-width: 450px;
+  min-width: 300px;
 }
 
 @media (max-width: 1200px) {
@@ -1999,7 +1995,7 @@ header .hover-section .other-links-container .item-content h2 {
 }
 
 .latest-events .main-part .info .timer span:hover,
-.latest-events .main-part .info .timer span:hover:before {
+.latest-events .main-part .info .timer span:hover::before {
   border-color: var(--color);
 }
 
@@ -2082,18 +2078,24 @@ header .hover-section .other-links-container .item-content h2 {
   top: 0;
   border: solid 40px #f6f5f5;
   border-width: 30px 40px;
-  border-radius: 60px;
-  background-color: var(--color);
   padding: 20px;
+  background-color: var(--color);
   color: white;
   font-size: 19px;
   letter-spacing: 0.5px;
   font-weight: bold;
   cursor: pointer;
-  -webkit-transition: background-color var(--main-transition);
-  -moz-transition: background-color var(--main-transition);
-  -o-transition: background-color var(--main-transition);
-  -ms-transition: background-color var(--main-transition);
+  -webkit-border-radius: 60px;
+  -moz-border-radius: 60px;
+  -o-border-radius: 60px;
+  -ms-border-radius: 60px;
+  -webkit-transition: opacity var(--main-transition);
+  -moz-transition: opacity var(--main-transition);
+  -o-transition: opacity var(--main-transition);
+  -ms-transition: opacity var(--main-transition);
+}
+.latest-events .email-container input[type=submit]:hover {
+  opacity: 0.8;
 }
 
 @media (max-width: 991px) {
@@ -2124,10 +2126,6 @@ header .hover-section .other-links-container .item-content h2 {
     width: 100%;
   }
 }
-.latest-events .email-container input[type=submit]:hover {
-  background-color: var(--color);
-}
-
 /*? Latest-events [End] */
 /*! Pricing Plans [Start] */
 .pricing-plans {
@@ -2160,10 +2158,10 @@ header .hover-section .other-links-container .item-content h2 {
   height: 50%;
   background-color: #f6f6f6;
   z-index: -1;
-  -webkit-transition: var(--main-transition);
-  -moz-transition: var(--main-transition);
-  -o-transition: var(--main-transition);
-  -ms-transition: var(--main-transition);
+  -webkit-transition: width var(--main-transition);
+  -moz-transition: width var(--main-transition);
+  -o-transition: width var(--main-transition);
+  -ms-transition: width var(--main-transition);
 }
 
 .pricing-plans .card::before {
@@ -2314,10 +2312,10 @@ header .hover-section .other-links-container .item-content h2 {
   border: solid 2px var(--color);
   padding: 10px 20px;
   border-radius: 6px;
-  -webkit-transition: var(--main-transition);
-  -moz-transition: var(--main-transition);
-  -o-transition: var(--main-transition);
-  -ms-transition: var(--main-transition);
+  -webkit-transition: color var(--main-transition), background-color var(--main-transition);
+  -moz-transition: color var(--main-transition), background-color var(--main-transition);
+  -o-transition: color var(--main-transition), background-color var(--main-transition);
+  -ms-transition: color var(--main-transition), background-color var(--main-transition);
 }
 
 .pricing-plans .card .below-part .button-sub button:hover a {
@@ -2380,11 +2378,10 @@ header .hover-section .other-links-container .item-content h2 {
 .top-videos .top-videos-menu .header i {
   font-size: 18px;
   cursor: pointer;
-  transition: color var(--main-transition);
   -webkit-transition: color var(--main-transition);
   -moz-transition: color var(--main-transition);
-  -ms-transition: color var(--main-transition);
   -o-transition: color var(--main-transition);
+  -ms-transition: color var(--main-transition);
 }
 
 .top-videos .top-videos-menu .header i:hover {
@@ -2392,20 +2389,18 @@ header .hover-section .other-links-container .item-content h2 {
 }
 
 .top-videos .top-videos-menu .container-times-video nav li {
-  padding: 20px;
+  padding: 21.5px 20px;
   display: flex;
   flex-direction: column;
+  -webkit-transition: color var(--main-transition), background-color var(--main-transition);
+  -moz-transition: color var(--main-transition), background-color var(--main-transition);
+  -o-transition: color var(--main-transition), background-color var(--main-transition);
+  -ms-transition: color var(--main-transition), background-color var(--main-transition);
+  cursor: pointer;
 }
-
 .top-videos .top-videos-menu .container-times-video nav li:not(:last-child) {
   border-bottom: solid 1px #ddd;
-  cursor: pointer;
-  -webkit-transition: var(--main-transition);
-  -moz-transition: var(--main-transition);
-  -o-transition: var(--main-transition);
-  -ms-transition: var(--main-transition);
 }
-
 .top-videos .top-videos-menu .container-times-video nav li:hover {
   color: var(--color);
   background-color: #fafafa;
@@ -2471,7 +2466,7 @@ header .hover-section .other-links-container .item-content h2 {
 /*? Top Videos [End] */
 /*! Stats [Start] */
 .stats {
-  background: url(https://moamal-2000.github.io/template1/imgs/stats.jpg);
+  background: url("https://moamal-2000.github.io/template1/imgs/stats.jpg");
   background-repeat: no-repeat;
   background-size: cover;
   position: relative;
@@ -2539,6 +2534,9 @@ header .hover-section .other-links-container .item-content h2 {
   -o-transition: background-color var(--main-transition);
   -ms-transition: background-color var(--main-transition);
 }
+.stats .box:hover {
+  background-color: white;
+}
 
 .stats .box::before,
 .stats .box::after {
@@ -2568,10 +2566,6 @@ header .hover-section .other-links-container .item-content h2 {
   height: 100%;
 }
 
-.stats .box:hover {
-  background-color: white;
-}
-
 .stats .box i {
   color: #3e3e3e;
   -webkit-transition: color var(--main-transition);
@@ -2579,8 +2573,7 @@ header .hover-section .other-links-container .item-content h2 {
   -o-transition: color var(--main-transition);
   -ms-transition: color var(--main-transition);
 }
-
-.stats .box:hover i {
+.stats .box i:hover i {
   color: #000;
 }
 
@@ -2624,7 +2617,7 @@ header .hover-section .other-links-container .item-content h2 {
 }
 .discount .info-discount {
   flex-basis: 50%;
-  background: url(https://moamal-2000.github.io/template1/imgs/discount-background2.jpg);
+  background: url("https://moamal-2000.github.io/template1/imgs/discount-background2.jpg");
   background-size: cover;
   background-repeat: no-repeat;
   text-align: center;
@@ -2746,13 +2739,11 @@ header .hover-section .other-links-container .item-content h2 {
   font-size: 20px;
   font-weight: bold;
   cursor: pointer;
-  transition: background-color var(--main-transition);
   -webkit-transition: background-color var(--main-transition);
   -moz-transition: background-color var(--main-transition);
-  -ms-transition: background-color var(--main-transition);
   -o-transition: background-color var(--main-transition);
+  -ms-transition: background-color var(--main-transition);
 }
-
 .discount .req-discount input[type=submit]:hover {
   background-color: #0076d6;
 }
@@ -2826,17 +2817,17 @@ footer .contact-me .social-media a .facebook {
 }
 
 footer .contact-me .social-media a .facebook:hover {
-  background-color: #2259ef;
+  background-color: #5c5cff;
   color: white;
 }
 
 footer .contact-me .social-media a .twitter:hover {
-  background-color: #189df5;
+  background-color: #45bdd8;
   color: white;
 }
 
 footer .contact-me .social-media a .youtube:hover {
-  background-color: #f51a1a;
+  background-color: #ff1313;
   color: white;
 }
 
@@ -2863,12 +2854,11 @@ footer .links-container ul li {
   padding: 15px 0;
   border-bottom: solid 1px #424242;
   cursor: pointer;
-  -webkit-transition: var(--main-transition);
-  -moz-transition: var(--main-transition);
-  -o-transition: var(--main-transition);
-  -ms-transition: var(--main-transition);
+  -webkit-transition: margin-left var(--main-transition), color var(--main-transition);
+  -moz-transition: margin-left var(--main-transition), color var(--main-transition);
+  -o-transition: margin-left var(--main-transition), color var(--main-transition);
+  -ms-transition: margin-left var(--main-transition), color var(--main-transition);
 }
-
 footer .links-container ul li:hover {
   margin-left: 20px;
   color: white;
@@ -3015,7 +3005,10 @@ footer .container-made-by h4 > span::before {
   }
   100% {
     left: 0;
-    border-radius: 0;
+    -webkit-border-radius: 0;
+    -moz-border-radius: 0;
+    -o-border-radius: 0;
+    -ms-border-radius: 0;
     width: 51%;
     height: 100%;
   }
@@ -3027,7 +3020,10 @@ footer .container-made-by h4 > span::before {
   }
   100% {
     right: 0;
-    border-radius: 0;
+    -webkit-border-radius: 0;
+    -moz-border-radius: 0;
+    -o-border-radius: 0;
+    -ms-border-radius: 0;
     width: 51%;
     height: 100%;
   }
@@ -3037,7 +3033,7 @@ footer .container-made-by h4 > span::before {
     margin-right: 10px;
   }
   50% {
-    margin-right: 0px;
+    margin-right: 0;
   }
 }
 @keyframes moving-arrow {

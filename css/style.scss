@@ -163,6 +163,10 @@ header {
   }
 }
 
+header h1 {
+  margin: 0;
+}
+
 header h1 a {
   color: var(--color);
   font-size: 25px;
@@ -564,7 +568,7 @@ header .hover-section .other-links-container .item-content h2 {
 /*? Articles [Start] */
 .main-articles {
   margin: 100px auto 25px;
-  width: 1200px;
+  width: 1150px;
 }
 
 @media (max-width: 1200px) {
@@ -800,8 +804,13 @@ header .hover-section .other-links-container .item-content h2 {
   bottom: 100%;
   height: 30px;
   background-size: 30px 100%;
-  background-image: linear-gradient(310deg, #e5e5e5 30%, transparent 30%),
-    linear-gradient(410deg, #e5e5e5 30%, transparent 30%);
+  background-image:
+    linear-gradient(310deg,
+      #e5e5e5 30%,
+      transparent 30%),
+    linear-gradient(410deg,
+      #e5e5e5 30%,
+      transparent 30%);
   background-position: 0 0;
 }
 
@@ -1155,10 +1164,10 @@ header .hover-section .other-links-container .item-content h2 {
   border-radius: 10px;
   position: relative;
   @include prefix(transition, transform var(--main-transition));
-}
 
-.testimonials .card:hover {
-  @include prefix(transform, scale(1.02));
+  &:hover {
+    @include prefix(transform, scale(1.02));
+  }
 }
 
 @media (max-width: 456px) {
@@ -1202,7 +1211,7 @@ header .hover-section .other-links-container .item-content h2 {
 }
 
 .testimonials .card i[class="fa-regular fa-star"] {
-  @include prefix(transition, color 0.3s linear);
+  @include prefix(transition, color .3s linear);
 }
 
 .testimonials .card:hover i[class="fa-regular fa-star"] {
@@ -1272,7 +1281,6 @@ header .hover-section .other-links-container .item-content h2 {
   border-radius: 10px;
   position: relative;
   user-select: none;
-  @include prefix(transition, var(--main-transition));
 }
 
 .team-members .card::before {
@@ -1285,7 +1293,7 @@ header .hover-section .other-links-container .item-content h2 {
   background-color: #80808014;
   border-radius: 10px;
   z-index: 1;
-  @include prefix(transition, var(--main-transition));
+  @include prefix(transition, width var(--main-transition));
 }
 
 .team-members .card:hover:before {
@@ -1323,7 +1331,7 @@ header .hover-section .other-links-container .item-content h2 {
   position: relative;
   left: -20%;
   z-index: 2;
-  @include prefix(transition, var(--main-transition));
+  @include prefix(transition, filter var(--main-transition));
 }
 
 .team-members .card:hover .first-part .image img {
@@ -1361,11 +1369,12 @@ header .hover-section .other-links-container .item-content h2 {
 
 .team-members .card .first-part .social-media-icons i {
   color: var(--main-paragraph-color);
-  font-size: 15px;
+  font-size: 16px;
   width: 20px;
   height: 20px;
   cursor: pointer;
   z-index: 3;
+  @include prefix(transition, color .3s)
 }
 
 @media (max-width: 412px) {
@@ -1379,20 +1388,11 @@ header .hover-section .other-links-container .item-content h2 {
   }
 }
 
-.team-members .card .first-part .social-media-icons .facebook:hover {
-  color: #5c5cff;
-}
-
-.team-members .card .first-part .social-media-icons .twitter:hover {
-  color: #45bdd8;
-}
-
-.team-members .card .first-part .social-media-icons .linkedin:hover {
-  color: #232323;
-}
-
-.team-members .card .first-part .social-media-icons .youtube:hover {
-  color: #ff1313;
+@each $social-name,
+$color in $social-media-colors {
+  .team-members .card .first-part .social-media-icons .#{$social-name}:hover {
+    color: $color;
+  }
 }
 
 .team-members .card .second-part h3 {
@@ -1411,11 +1411,8 @@ header .hover-section .other-links-container .item-content h2 {
   background: #e5e5e5;
   width: 100%;
   height: fit-content;
-  margin-top: 100px;
   border: solid 1px transparent;
-  margin: 0 auto;
-  margin-top: 100px;
-  padding-bottom: 100px;
+  margin: 100px auto;
 }
 
 .services .container::before {
@@ -1427,8 +1424,13 @@ header .hover-section .other-links-container .item-content h2 {
   display: block;
   height: 30px;
   background-size: 30px 100%;
-  background-image: linear-gradient(310deg, #e5e5e5 30%, transparent 30%),
-    linear-gradient(410deg, #e5e5e5 30%, transparent 30%);
+  background-image:
+    linear-gradient(310deg,
+      #e5e5e5 30%,
+      transparent 30%),
+    linear-gradient(410deg,
+      #e5e5e5 30%,
+      transparent 30%);
   background-position: 0 0;
 }
 
@@ -1444,7 +1446,11 @@ header .hover-section .other-links-container .item-content h2 {
   background-color: white;
   box-shadow: 0 0 10px #80808072;
   position: relative;
-  @include prefix(transition, var(--main-transition));
+  @include prefix(transition, transform var(--main-transition));
+
+  &:hover {
+    @include prefix(transform, translateY(-10px));
+  }
 }
 
 .services .cards-container .card::before {
@@ -1457,10 +1463,6 @@ header .hover-section .other-links-container .item-content h2 {
   background-color: var(--color);
   @include prefix(transform, translateX(-50%));
   @include prefix(transition, (width var(--main-transition), transform var(--main-transition)));
-}
-
-.services .cards-container .card:hover {
-  @include prefix(transform, translateY(-10px));
 }
 
 .services .cards-container .card:hover:before {
@@ -1494,11 +1496,11 @@ header .hover-section .other-links-container .item-content h2 {
 }
 
 .services .cards-container .card .footer span {
-  color: white;
+  display: block;
   background-color: var(--color);
+  color: white;
   font-size: 30px;
   font-weight: 700;
-  display: block;
   padding: 8px 20px;
   position: relative;
   z-index: 1;
@@ -1511,9 +1513,8 @@ header .hover-section .other-links-container .item-content h2 {
   top: 0;
   width: 40px;
   height: 100%;
-  background-color: var(--color);
   z-index: -1;
-  @include prefix(transition, var(--main-transition));
+  background-color: var(--color);
   @include prefix(transform, skewX(-30deg));
 }
 
@@ -1598,7 +1599,7 @@ header .hover-section .other-links-container .item-content h2 {
   background-color: var(--color);
   height: 100%;
   width: 0;
-  @include prefix(transition, 1s);
+  @include prefix(transition, width 1s);
 }
 
 .our-skills .skills-container .label::after {
@@ -1672,8 +1673,8 @@ header .hover-section .other-links-container .item-content h2 {
 
 .how-it-works .card {
   background-color: #f6f5f5;
-  padding: 30px;
   border: solid 3px white;
+  padding: 30px;
   border-radius: 6px;
   display: flex;
   position: relative;
@@ -1709,15 +1710,13 @@ header .hover-section .other-links-container .item-content h2 {
   @include prefix(transition, (width var(--main-transition), height var(--main-transition)));
 }
 
-.how-it-works .card:hover:before {
+.how-it-works .card:hover::before {
   width: 100%;
   height: 100%;
 }
 
 .how-it-works .card .image {
-  display: flex;
-  justify-content: center;
-  align-items: center;
+  @include center-x-y;
   user-select: none;
 }
 
@@ -1740,7 +1739,7 @@ header .hover-section .other-links-container .item-content h2 {
 }
 
 .how-it-works .card .info h3 {
-  margin: 0 0 10px;
+  margin-bottom: 10px;
   font-size: 22px;
 }
 
@@ -1788,6 +1787,7 @@ header .hover-section .other-links-container .item-content h2 {
 
 .latest-events .main-part .image img {
   max-width: 450px;
+  min-width: 300px;
 }
 
 @media (max-width: 1200px) {
@@ -1842,24 +1842,15 @@ header .hover-section .other-links-container .item-content h2 {
 }
 
 .latest-events .main-part .info .timer span:hover,
-.latest-events .main-part .info .timer span:hover:before {
+.latest-events .main-part .info .timer span:hover::before {
   border-color: var(--color);
 }
 
-.latest-events .main-part .info .timer span:nth-child(1):before {
-  content: "Days";
-}
-
-.latest-events .main-part .info .timer span:nth-child(2):before {
-  content: "Hours";
-}
-
-.latest-events .main-part .info .timer span:nth-child(3):before {
-  content: "Minutes";
-}
-
-.latest-events .main-part .info .timer span:nth-child(4):before {
-  content: "Seconds";
+@each $i,
+$duration-name in $duration-names {
+  .latest-events .main-part .info .timer span:nth-child(#{$i}):before {
+    content: $duration-name;
+  }
 }
 
 .latest-events .main-part .info .text {
@@ -1929,21 +1920,25 @@ header .hover-section .other-links-container .item-content h2 {
   top: 0;
   border: solid 40px #f6f5f5;
   border-width: 30px 40px;
-  border-radius: 60px;
-  background-color: var(--color);
   padding: 20px;
+  background-color: var(--color);
   color: white;
   font-size: 19px;
   letter-spacing: 0.5px;
   font-weight: bold;
   cursor: pointer;
-  @include prefix(transition, background-color var(--main-transition));
+  @include prefix(border-radius, 60px);
+  @include prefix(transition, opacity var(--main-transition));
+
+  &:hover {
+    opacity: .8;
+  }
 }
 
 @media (max-width: 991px) {
 
   .latest-events .email-container input:first-child,
-  .latest-events .email-container input[type="submit"] {
+  .latest-events .email-container input[type=submit] {
     border-radius: 0;
     border-width: 20px;
   }
@@ -1952,14 +1947,14 @@ header .hover-section .other-links-container .item-content h2 {
 @media (max-width: 818px) {
 
   .latest-events .email-container input:first-child,
-  .latest-events .email-container input[type="submit"] {
+  .latest-events .email-container input[type=submit] {
     border-radius: 0;
     border-width: 20px;
   }
 }
 
 @media (max-width: 680px) {
-  .latest-events .email-container input[type="submit"] {
+  .latest-events .email-container input[type=submit] {
     left: 50%;
     top: 80%;
     width: 100%;
@@ -1969,10 +1964,6 @@ header .hover-section .other-links-container .item-content h2 {
   .latest-events .email-container input:first-child {
     width: 100%;
   }
-}
-
-.latest-events .email-container input[type="submit"]:hover {
-  background-color: var(--color);
 }
 
 /*? Latest-events [End] */
@@ -2012,7 +2003,7 @@ header .hover-section .other-links-container .item-content h2 {
   height: 50%;
   background-color: #f6f6f6;
   z-index: -1;
-  @include prefix(transition, var(--main-transition));
+  @include prefix(transition, width var(--main-transition));
 }
 
 .pricing-plans .card::before {
@@ -2148,7 +2139,7 @@ header .hover-section .other-links-container .item-content h2 {
   border: solid 2px var(--color);
   padding: 10px 20px;
   border-radius: 6px;
-  @include prefix(transition, var(--main-transition))
+  @include prefix(transition, (color var(--main-transition), background-color var(--main-transition)));
 }
 
 .pricing-plans .card .below-part .button-sub button:hover a {
@@ -2216,11 +2207,7 @@ header .hover-section .other-links-container .item-content h2 {
 .top-videos .top-videos-menu .header i {
   font-size: 18px;
   cursor: pointer;
-  transition: color var(--main-transition);
-  -webkit-transition: color var(--main-transition);
-  -moz-transition: color var(--main-transition);
-  -ms-transition: color var(--main-transition);
-  -o-transition: color var(--main-transition);
+  @include prefix(transition, color var(--main-transition));
 }
 
 .top-videos .top-videos-menu .header i:hover {
@@ -2228,20 +2215,20 @@ header .hover-section .other-links-container .item-content h2 {
 }
 
 .top-videos .top-videos-menu .container-times-video nav li {
-  padding: 20px;
+  padding: 21.5px 20px;
   display: flex;
   flex-direction: column;
-}
-
-.top-videos .top-videos-menu .container-times-video nav li:not(:last-child) {
-  border-bottom: solid 1px #ddd;
+  @include prefix(transition, (color var(--main-transition), background-color var(--main-transition)));
   cursor: pointer;
-  @include prefix(transition, var(--main-transition));
-}
 
-.top-videos .top-videos-menu .container-times-video nav li:hover {
-  color: var(--color);
-  background-color: #fafafa;
+  &:not(:last-child) {
+    border-bottom: solid 1px #ddd;
+  }
+
+  &:hover {
+    color: var(--color);
+    background-color: #fafafa;
+  }
 }
 
 .top-videos .top-videos-menu .container-times-video nav li span {
@@ -2306,7 +2293,7 @@ header .hover-section .other-links-container .item-content h2 {
 
 /*! Stats [Start] */
 .stats {
-  background: url(https://moamal-2000.github.io/template1/imgs/stats.jpg);
+  background: url("https://moamal-2000.github.io/template1/imgs/stats.jpg");
   background-repeat: no-repeat;
   background-size: cover;
   position: relative;
@@ -2370,6 +2357,10 @@ header .hover-section .other-links-container .item-content h2 {
   cursor: pointer;
   position: relative;
   @include prefix(transition, background-color var(--main-transition));
+
+  &:hover {
+    background-color: white;
+  }
 }
 
 .stats .box::before,
@@ -2397,17 +2388,13 @@ header .hover-section .other-links-container .item-content h2 {
   height: 100%;
 }
 
-.stats .box:hover {
-  background-color: white;
-}
-
 .stats .box i {
   color: #3e3e3e;
   @include prefix(transition, color var(--main-transition));
-}
 
-.stats .box:hover i {
-  color: #000;
+  &:hover i {
+    color: #000;
+  }
 }
 
 .stats .box span {
@@ -2451,7 +2438,7 @@ header .hover-section .other-links-container .item-content h2 {
 
 .discount .info-discount {
   flex-basis: 50%;
-  background: url(https://moamal-2000.github.io/template1/imgs/discount-background2.jpg);
+  background: url("https://moamal-2000.github.io/template1/imgs/discount-background2.jpg");
   background-size: cover;
   background-repeat: no-repeat;
   text-align: center;
@@ -2564,22 +2551,18 @@ header .hover-section .other-links-container .item-content h2 {
   height: 200px;
 }
 
-.discount .req-discount input[type="submit"] {
+.discount .req-discount input[type=submit] {
   background-color: var(--color);
   color: white;
   text-align: center;
   font-size: 20px;
   font-weight: bold;
   cursor: pointer;
-  transition: background-color var(--main-transition);
-  -webkit-transition: background-color var(--main-transition);
-  -moz-transition: background-color var(--main-transition);
-  -ms-transition: background-color var(--main-transition);
-  -o-transition: background-color var(--main-transition);
-}
+  @include prefix(transition, background-color var(--main-transition));
 
-.discount .req-discount input[type="submit"]:hover {
-  background-color: #0076d6;
+  &:hover {
+    background-color: #0076d6;
+  }
 }
 
 /*? Discount [End] */
@@ -2652,19 +2635,14 @@ footer .contact-me .social-media a .facebook {
   min-height: 50px;
 }
 
-footer .contact-me .social-media a .facebook:hover {
-  background-color: #2259ef;
-  color: white;
-}
-
-footer .contact-me .social-media a .twitter:hover {
-  background-color: #189df5;
-  color: white;
-}
-
-footer .contact-me .social-media a .youtube:hover {
-  background-color: #f51a1a;
-  color: white;
+@each $social-name,
+$color in $social-media-colors {
+  @if ($social-name !=linkedin) {
+    footer .contact-me .social-media a .#{$social-name}:hover {
+      background-color: $color;
+      color: white;
+    }
+  }
 }
 
 footer .contact-me p {
@@ -2692,12 +2670,12 @@ footer .links-container ul li {
   padding: 15px 0;
   border-bottom: solid 1px #424242;
   cursor: pointer;
-  @include prefix(transition, var(--main-transition));
-}
+  @include prefix(transition, (margin-left var(--main-transition), color var(--main-transition)));
 
-footer .links-container ul li:hover {
-  margin-left: 20px;
-  color: white;
+  &:hover {
+    margin-left: 20px;
+    color: white;
+  }
 }
 
 footer .links-container ul li::before {
@@ -2856,7 +2834,7 @@ footer .container-made-by h4>span::before {
 
   100% {
     left: 0;
-    border-radius: 0;
+    @include prefix(border-radius, 0);
     width: 51%;
     height: 100%;
   }
@@ -2870,7 +2848,7 @@ footer .container-made-by h4>span::before {
 
   100% {
     right: 0;
-    border-radius: 0;
+    @include prefix(border-radius, 0);
     width: 51%;
     height: 100%;
   }
@@ -2884,7 +2862,7 @@ footer .container-made-by h4>span::before {
   }
 
   50% {
-    margin-right: 0px;
+    margin-right: 0;
   }
 }
 
@@ -2949,7 +2927,7 @@ footer .container-made-by h4>span::before {
 }
 
 #scroll-to-top-button:hover {
-  opacity: 0.9;
+  opacity: .9;
   animation: up-button-animation 1s 1;
   -webkit-animation: up-button-animation 1s 1;
 }

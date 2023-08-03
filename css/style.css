@@ -389,6 +389,8 @@ header nav ul li .hover-section {
 }
 header nav ul li .hover-section img {
   max-width: 100%;
+  -o-object-fit: cover;
+     object-fit: cover;
 }
 
 @media (max-width: 1200px) {
@@ -582,6 +584,8 @@ header .hover-section .other-links-container .item-content h2 {
   left: -5%;
   animation: landing-img-animation 4s infinite;
   -webkit-animation: landing-img-animation 4s infinite;
+  -o-object-fit: cover;
+     object-fit: cover;
 }
 
 @media (max-width: 992px) {
@@ -818,6 +822,8 @@ header .hover-section .other-links-container .item-content h2 {
   -webkit-user-select: none;
      -moz-user-select: none;
           user-select: none;
+  -o-object-fit: cover;
+     object-fit: cover;
 }
 
 .main-articles .card .text {
@@ -971,19 +977,21 @@ header .hover-section .other-links-container .item-content h2 {
   -webkit-animation: gallery-box-effect 0.8s forwards;
 }
 
-.gallery .boxes-container .main-box:hover img {
-  -webkit-transform: rotate(5deg) scale(1.1);
-  -moz-transform: rotate(5deg) scale(1.1);
-  -o-transform: rotate(5deg) scale(1.1);
-  -ms-transform: rotate(5deg) scale(1.1);
-}
-
 .gallery .boxes-container .main-box img {
   width: 100%;
   -webkit-transition: transform var(--main-transition);
   -moz-transition: transform var(--main-transition);
   -o-transition: transform var(--main-transition);
   -ms-transition: transform var(--main-transition);
+  -o-object-fit: cover;
+     object-fit: cover;
+}
+
+.gallery .boxes-container .main-box:hover img {
+  -webkit-transform: rotate(5deg) scale(1.1);
+  -moz-transform: rotate(5deg) scale(1.1);
+  -o-transform: rotate(5deg) scale(1.1);
+  -ms-transform: rotate(5deg) scale(1.1);
 }
 
 .popup-overlay {
@@ -1462,6 +1470,8 @@ header .hover-section .other-links-container .item-content h2 {
   -moz-transition: filter var(--main-transition);
   -o-transition: filter var(--main-transition);
   -ms-transition: filter var(--main-transition);
+  -o-object-fit: cover;
+     object-fit: cover;
 }
 
 .team-members .card:hover .first-part .image img {
@@ -1710,6 +1720,8 @@ header .hover-section .other-links-container .item-content h2 {
 }
 .our-skills .image img {
   margin-top: 40px;
+  -o-object-fit: contain;
+     object-fit: contain;
 }
 
 .our-skills .skills-container {
@@ -1934,6 +1946,8 @@ header .hover-section .other-links-container .item-content h2 {
 .latest-events .main-part .image img {
   max-width: 450px;
   min-width: 300px;
+  -o-object-fit: contain;
+     object-fit: contain;
 }
 
 @media (max-width: 1200px) {
@@ -2926,6 +2940,8 @@ footer .small-gallery .image img {
   width: 78px;
   border: solid 1px black;
   outline: solid 3px white;
+  -o-object-fit: cover;
+     object-fit: cover;
 }
 
 footer .container-made-by {

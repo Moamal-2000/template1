@@ -2478,7 +2478,7 @@ header .hover-section .other-links-container .item-content h2 {
 /*? Top Videos [End] */
 /*! Stats [Start] */
 .stats {
-  background: url("https://moamal-2000.github.io/template1/imgs/stats.jpg");
+  background: url("https://raw.githubusercontent.com/Moamal-2000/template1/main/assets/imgs/stats.webp");
   background-repeat: no-repeat;
   background-size: cover;
   position: relative;
@@ -2629,7 +2629,7 @@ header .hover-section .other-links-container .item-content h2 {
 }
 .discount .info-discount {
   flex-basis: 50%;
-  background: url("https://moamal-2000.github.io/template1/imgs/discount-background2.jpg");
+  background: url("https://raw.githubusercontent.com/Moamal-2000/template1/main/assets/imgs/discount-background2.webp");
   background-size: cover;
   background-repeat: no-repeat;
   text-align: center;

@@ -5,15 +5,13 @@
 * {
   padding: 0;
   margin: 0;
-  box-sizing: border-box;
-  -webkit-box-sizing: border-box;
-  -moz-box-sizing: border-box;
+  @include prefix(box-sizing, border-box);
   caret-color: var(--color);
 }
 
 *::selection {
   background-color: var(--color);
-  color: #fff;
+  color: var(--white);
 }
 
 html {
@@ -32,6 +30,7 @@ body {
   --main-paragraph-color: #696969;
   --main-line-height-paragraph: 1.6;
   --main-section-color: #ececec;
+  --white: #fff;
 }
 
 @each $theme,
@@ -115,7 +114,7 @@ $color in $theme-colors {
   position: absolute;
   right: -3%;
   top: -6%;
-  color: #fff;
+  color: var(--white);
   font-size: 1.25rem;
   padding: 6px;
   cursor: pointer;
@@ -172,7 +171,11 @@ header h1 a {
   font-size: 1.5625rem;
   user-select: none;
   cursor: pointer;
-  @include prefix(transition, opacity var(--main-transition))
+  @include prefix(transition, opacity var(--main-transition));
+
+  &:hover {
+    opacity: .8;
+  }
 }
 
 @media (max-width: 768px) {
@@ -181,10 +184,6 @@ header h1 a {
     margin: 0;
     margin-bottom: 15px;
   }
-}
-
-header h1 a:hover {
-  opacity: 0.8;
 }
 
 header nav ul {
@@ -212,7 +211,7 @@ header nav ul li:hover>a {
   }
 
   header nav ul li>a {
-    font-size: 0.9375rem;
+    font-size: .9375rem;
     padding: 3px;
   }
 }
@@ -455,7 +454,7 @@ header .hover-section .other-links-container .item-content h2 {
 
 @media (max-width: 460px) {
   .landing-container .text p {
-    font-size: 0.9375rem;
+    font-size: .9375rem;
   }
 }
 
@@ -526,7 +525,7 @@ header .hover-section .other-links-container .item-content h2 {
   margin: var(--margin-top-title) auto var(--margin-bottom-title);
 
   &:hover {
-    color: white;
+    color: var(--white);
     border: solid 2px transparent;
     @include prefix(transition, (color .5s .3s, border .5s .3s))
   }
@@ -553,12 +552,12 @@ header .hover-section .other-links-container .item-content h2 {
   right: -30px;
 }
 
-.main-title:hover:before {
+.main-title:hover::before {
   animation: left-move .5s forwards;
   -webkit-animation: left-move .5s forwards;
 }
 
-.main-title:hover:after {
+.main-title:hover::after {
   animation: right-move .5s forwards;
   -webkit-animation: right-move .5s forwards;
 }
@@ -681,12 +680,12 @@ header .hover-section .other-links-container .item-content h2 {
   overflow: hidden;
   position: relative;
   top: 0;
-  @include prefix(transition, (box-shadow var(--main-transition), top var(--main-transition)))
-}
+  @include prefix(transition, (box-shadow var(--main-transition), top var(--main-transition)));
 
-.main-articles .card:hover {
-  box-shadow: 0 0 10px #939393;
-  top: -10px;
+  &:hover {
+    box-shadow: 0 0 10px #939393;
+    top: -10px;
+  }
 }
 
 @media (max-width: 1200px) {
@@ -734,7 +733,7 @@ header .hover-section .other-links-container .item-content h2 {
 .main-articles .card .text p {
   color: #666;
   line-height: var(--main-line-height-paragraph);
-  font-size: 0.9375rem;
+  font-size: .9375rem;
   width: 80%;
 }
 
@@ -846,7 +845,7 @@ header .hover-section .other-links-container .item-content h2 {
 
 .gallery .boxes-container .main-box {
   box-shadow: 0 0 10px #80808080;
-  background-color: #fff;
+  background-color: var(--white);
   @include center-x-y;
   cursor: pointer;
 }
@@ -899,7 +898,7 @@ header .hover-section .other-links-container .item-content h2 {
   position: fixed;
   left: 50%;
   top: 50%;
-  background-color: white;
+  background-color: var(--white);
   border: 1px solid #ccc;
   padding: 10px;
   z-index: 1001;
@@ -1000,7 +999,7 @@ header .hover-section .other-links-container .item-content h2 {
   height: 0;
   border-left: 340px solid transparent;
   border-right: 0 solid transparent;
-  border-bottom: 130px solid white;
+  border-bottom: 130px solid var(--white);
   z-index: 10;
   @include prefix(transition, border var(--main-transition));
 }
@@ -1077,7 +1076,7 @@ header .hover-section .other-links-container .item-content h2 {
   font-size: 1.375rem;
   font-weight: 700;
   padding: 8px 25px;
-  background-color: white;
+  background-color: var(--white);
   margin: 40px auto;
   position: relative;
   left: 50%;
@@ -1124,7 +1123,7 @@ header .hover-section .other-links-container .item-content h2 {
 }
 
 .features .card:hover .text-container button a {
-  color: white;
+  color: var(--white);
 }
 
 /*? Features [End] */
@@ -1163,7 +1162,7 @@ header .hover-section .other-links-container .item-content h2 {
 }
 
 .testimonials .card {
-  background-color: white;
+  background-color: var(--white);
   padding: 20px;
   border-radius: 10px;
   position: relative;
@@ -1300,7 +1299,7 @@ header .hover-section .other-links-container .item-content h2 {
   @include prefix(transition, width var(--main-transition));
 }
 
-.team-members .card:hover:before {
+.team-members .card:hover::before {
   width: 100%;
 }
 
@@ -1448,7 +1447,7 @@ $color in $social-media-colors {
 }
 
 .services .cards-container .card {
-  background-color: white;
+  background-color: var(--white);
   box-shadow: 0 0 10px #80808072;
   position: relative;
   @include prefix(transition, transform var(--main-transition));
@@ -1470,7 +1469,7 @@ $color in $social-media-colors {
   @include prefix(transition, (width var(--main-transition), transform var(--main-transition)));
 }
 
-.services .cards-container .card:hover:before {
+.services .cards-container .card:hover::before {
   width: 100%;
 }
 
@@ -1503,7 +1502,7 @@ $color in $social-media-colors {
 .services .cards-container .card .footer span {
   display: block;
   background-color: var(--color);
-  color: white;
+  color: var(--white);
   font-size: 1.875rem;
   font-weight: 700;
   padding: 8px 20px;
@@ -1614,8 +1613,8 @@ $color in $social-media-colors {
   right: 0;
   top: -44px;
   border: solid 1px #b1b1b1;
-  background-color: white;
-  font-size: 0.9375rem;
+  background-color: var(--white);
+  font-size: .9375rem;
   color: var(--color);
   border-radius: 5px;
   font-weight: bold;
@@ -1679,7 +1678,7 @@ $color in $social-media-colors {
 
 .how-it-works .card {
   background-color: #f6f5f5;
-  border: solid 3px white;
+  border: solid 3px var(--white);
   padding: 30px;
   border-radius: 6px;
   display: flex;
@@ -1825,10 +1824,10 @@ $color in $social-media-colors {
   position: relative;
   text-align: center;
   @include prefix(transition, border-color var(--main-transition));
-}
 
-.latest-events .main-part .info .timer span:not(:last-child) {
-  margin-right: 10px;
+  &:not(:last-child) {
+    margin-right: 10px;
+  }
 }
 
 .latest-events .main-part .info .timer span::before {
@@ -1839,7 +1838,7 @@ $color in $social-media-colors {
   width: 100%;
   border-top: solid 1px #dedede;
   color: black;
-  font-size: 0.75rem;
+  font-size: .75rem;
   font-weight: lighter;
   display: flex;
   justify-content: center;
@@ -1855,7 +1854,7 @@ $color in $social-media-colors {
 
 @each $i,
 $duration-name in $duration-names {
-  .latest-events .main-part .info .timer span:nth-child(#{$i}):before {
+  .latest-events .main-part .info .timer span:nth-child(#{$i})::before {
     content: $duration-name;
   }
 }
@@ -1929,9 +1928,9 @@ $duration-name in $duration-names {
   border-width: 30px 40px;
   padding: 20px;
   background-color: var(--color);
-  color: white;
+  color: var(--white);
   font-size: 1.1875rem;
-  letter-spacing: 0.5px;
+  letter-spacing: .5px;
   font-weight: bold;
   cursor: pointer;
   @include prefix(border-radius, 60px);
@@ -1993,7 +1992,7 @@ $duration-name in $duration-names {
 }
 
 .pricing-plans .card {
-  background-color: white;
+  background-color: var(--white);
   box-shadow:
     0 12px 20px 0 #00000021,
     0 2px 4px 0 #0000001f;
@@ -2023,7 +2022,7 @@ $duration-name in $duration-names {
   bottom: 0;
 }
 
-.pricing-plans .card:hover:before,
+.pricing-plans .card:hover::before,
 .pricing-plans .card:hover::after {
   width: 100%;
 }
@@ -2042,7 +2041,7 @@ $duration-name in $duration-names {
   position: absolute;
   right: -40px;
   top: -50px;
-  color: white;
+  color: var(--white);
   font-weight: bold;
   font-size: 1.125rem;
   letter-spacing: 1px;
@@ -2140,7 +2139,7 @@ $duration-name in $duration-names {
 
 .pricing-plans .card .below-part .button-sub button a {
   color: var(--color);
-  background-color: white;
+  background-color: var(--white);
   font-weight: bold;
   outline: none;
   border: solid 2px var(--color);
@@ -2150,7 +2149,7 @@ $duration-name in $duration-names {
 }
 
 .pricing-plans .card .below-part .button-sub button:hover a {
-  color: white;
+  color: var(--white);
   background-color: var(--color);
 }
 
@@ -2215,10 +2214,10 @@ $duration-name in $duration-names {
   font-size: 1.125rem;
   cursor: pointer;
   @include prefix(transition, color var(--main-transition));
-}
 
-.top-videos .top-videos-menu .header i:hover {
-  color: var(--color);
+  &:hover {
+    color: var(--color);
+  }
 }
 
 .top-videos .top-videos-menu .container-times-video nav li {
@@ -2283,7 +2282,7 @@ $duration-name in $duration-names {
 }
 
 .top-videos .view-videos-container p {
-  background-color: white;
+  background-color: var(--white);
   padding: 20px;
   user-select: all;
 }
@@ -2366,7 +2365,7 @@ $duration-name in $duration-names {
   @include prefix(transition, background-color var(--main-transition));
 
   &:hover {
-    background-color: white;
+    background-color: var(--white);
   }
 }
 
@@ -2390,8 +2389,8 @@ $duration-name in $duration-names {
   top: 0;
 }
 
-.stats .box:hover:before,
-.stats .box:hover:after {
+.stats .box:hover::before,
+.stats .box:hover::after {
   height: 100%;
 }
 
@@ -2449,7 +2448,7 @@ $duration-name in $duration-names {
   background-size: cover;
   background-repeat: no-repeat;
   text-align: center;
-  color: white;
+  color: var(--white);
   padding: 20px;
   position: relative;
   z-index: 1;
@@ -2533,13 +2532,13 @@ $duration-name in $duration-names {
 
 .discount .req-discount h2 span {
   background-color: var(--color);
-  color: #fff;
+  color: var(--white);
   padding: 10px 6px;
   display: inline-block;
 }
 
 .discount .req-discount h2 span::selection {
-  background-color: white;
+  background-color: var(--white);
 }
 
 .discount .req-discount input,
@@ -2560,7 +2559,7 @@ $duration-name in $duration-names {
 
 .discount .req-discount input[type=submit] {
   background-color: var(--color);
-  color: white;
+  color: var(--white);
   text-align: center;
   font-size: 1.25rem;
   font-weight: bold;
@@ -2599,7 +2598,7 @@ footer .container {
 }
 
 footer .contact-me h3 {
-  color: white;
+  color: var(--white);
   font-size: 3.125rem;
 }
 
@@ -2647,7 +2646,7 @@ $color in $social-media-colors {
   @if ($social-name !=linkedin) {
     footer .contact-me .social-media a .#{$social-name}:hover {
       background-color: $color;
-      color: white;
+      color: var(--white);
     }
   }
 }
@@ -2671,7 +2670,7 @@ footer .contact-me p {
 }
 
 footer .links-container ul li {
-  font-size: 0.9375rem;
+  font-size: .9375rem;
   font-weight: normal;
   position: relative;
   padding: 15px 0;
@@ -2681,7 +2680,7 @@ footer .links-container ul li {
 
   &:hover {
     margin-left: 20px;
-    color: white;
+    color: var(--white);
   }
 }
 
@@ -2748,7 +2747,7 @@ footer .small-gallery .image::before {
 footer .small-gallery .image img {
   width: 78px;
   border: solid 1px black;
-  outline: solid 3px white;
+  outline: solid 3px var(--white);
   object-fit: cover;
 }
 
@@ -2762,11 +2761,11 @@ footer hr {
 }
 
 footer .container-made-by h4 {
-  color: white;
+  color: var(--white);
   font-weight: normal;
   font-size: 1.0625rem;
   text-align: center;
-  letter-spacing: 0.7px;
+  letter-spacing: .7px;
 }
 
 footer .container-made-by h4>span {
@@ -2919,7 +2918,7 @@ footer .container-made-by h4>span::before {
 /** Scroll button [Start] */
 #scroll-to-top-button {
   background-color: var(--color);
-  color: white;
+  color: var(--white);
   border: none;
   padding: 10px;
   font-weight: bold;
@@ -2932,12 +2931,12 @@ footer .container-made-by h4>span::before {
   visibility: hidden;
   z-index: 900;
   @include prefix(transition, opacity .3s);
-}
 
-#scroll-to-top-button:hover {
-  opacity: .9;
-  animation: up-button-animation 1s 1;
-  -webkit-animation: up-button-animation 1s 1;
+  &:hover {
+    opacity: .9;
+    animation: up-button-animation 1s 1;
+    -webkit-animation: up-button-animation 1s 1;
+  }
 }
 
 /** Scroll button [End] */

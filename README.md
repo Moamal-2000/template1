@@ -2,10 +2,7 @@
 My First Website using HTML &amp; CSS &amp; lately I added Javascript
 
 ## Notes:
-- This website just to show what i learned so its not really useful website such as facebook, youtube etc...
-- All information in this website not real
-- the time of make this website took of me 1 month only by using HTML and CSS and took of me week to add javascript stuff
-
-Thanks.
-
-Wrote by Moamal Alaa.
+- This website build just to show what I learned so its not really useful website such as facebook, youtube etc...
+- All information in this website not real.
+- Took of me 1 month exactly to build the website.
+- website build with HTML, CSS, SASS and JavaScript.

@@ -23,7 +23,7 @@ const colorGenerator = document.getElementById("color-generator"),
   menu = document.querySelector(".hover-section"),
   otherLinksButton = document.querySelector(".other-links"),
   header = document.querySelector("header"),
-  closeOpenHeaderSound = new Audio("sounds-effect/header-sound.m4a"),
+  closeOpenHeaderSound = new Audio("assets/sounds-effect/header-sound.m4a"),
   syncImgs = document.querySelectorAll('img:not([decoding="async"])');
 
 

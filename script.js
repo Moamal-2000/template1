@@ -26,7 +26,6 @@ const colorGenerator = document.getElementById("color-generator"),
   closeOpenHeaderSound = new Audio("assets/sounds-effect/header-sound.m4a"),
   syncImgs = document.querySelectorAll('img:not([decoding="async"])');
 
-
 let switcher = false,
   colors = [
     "red",
@@ -55,7 +54,7 @@ if (localStorage.websiteThemeColor === undefined) {
 }
 
 // set Timer to close Color Theme Settings
-var timer10second;
+let timer10second;
 tool.onclick = () => {
   let limitedTime = 10000;
   if (colorGenerator.style.left === "0px") {
@@ -99,7 +98,7 @@ button.addEventListener("click", () => {
 //? Scroll Button [End]
 
 //! Add alt attribute to images [Start]
-let allImages = document.querySelectorAll("img");
+const allImages = document.querySelectorAll("img");
 let countImages = 1;
 
 allImages.forEach((image) => {
@@ -110,10 +109,10 @@ allImages.forEach((image) => {
 //! Add alt attribute to images [End]
 
 //? popup for gallery images [Start]
-let galleryImages = document.querySelectorAll(".boxes-container .main-box");
-let overlay = document.createElement("div");
-let popupBox = document.createElement("div");
-let popupImage = document.createElement("img");
+const galleryImages = document.querySelectorAll(".boxes-container .main-box");
+const overlay = document.createElement("div");
+const popupBox = document.createElement("div");
+const popupImage = document.createElement("img");
 galleryImages.forEach((img) => {
   img.addEventListener("click", () => {
     overlay.className = "popup-overlay";
@@ -162,7 +161,7 @@ otherLinksButton.onclick = () => {
 //! Show Menu With Click [End]
 
 //? set time count down until new year [Start]
-let timerUnites = document.querySelectorAll(
+const timerUnites = document.querySelectorAll(
   ".latest-events .main-part .info .timer span"
 );
 
@@ -171,31 +170,31 @@ let second = 1000,
   hour = minute * 60,
   day = hour * 24;
 
-let newYearTimer = setInterval(() => {
+const newYearTimer = setInterval(() => {
   let timeNow = new Date().getTime(),
     newYear = new Date(`${new Date().getFullYear() + 1}`).getTime(),
     newYearTime = newYear - timeNow;
 
-  timerUnites[0].textContent = Math.floor(newYearTime / day);
+  timerUnites[0].textContent = Math.floor(newYearTime / day - 31);
   timerUnites[1].textContent = Math.floor((newYearTime % day) / hour);
   timerUnites[2].textContent = Math.floor((newYearTime % hour) / minute);
   timerUnites[3].textContent = Math.floor((newYearTime % minute) / second);
 }, 1000);
 
 // Set the new year message
-let nextYear = new Date().getFullYear() + 1;
+const nextYear = new Date().getFullYear() + 1;
 const textNewYear = document.querySelector(".new-year-msg");
 textNewYear.textContent = textNewYear.textContent + nextYear;
 
 //? set time count down until new year [End]
 
 //! Increment counter [Start]
-let stats = document.querySelectorAll(".stats .box .stat");
-let statsContainer = document.querySelector(".stats");
+const stats = document.querySelectorAll(".stats .box .stat");
+const statsContainer = document.querySelector(".stats");
 
 function startCount() {
   stats.forEach((ele) => {
-    let timer = setInterval(() => {
+    const timer = setInterval(() => {
       ele.textContent++;
       if (ele.textContent >= +ele.dataset.stat) {
         clearInterval(timer);

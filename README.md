@@ -1,8 +1,16 @@
-# template1: First Project !!!
-My First Website using HTML &amp; CSS &amp; lately I added Javascript
+# Template1: My First Project!
+This is my first website, created using HTML and CSS, with JavaScript added later to enhance functionality and interactivity.
 
-## Notes:
-- This website build just to show what I learned so its not really useful website such as facebook, youtube etc...
-- All information in this website not real.
-- Took of me 1 month exactly to build the website.
-- website build with HTML, CSS, SASS and JavaScript.
+## Purpose:
+This website was built purely as a learning project to showcase my front-end.
+
+## Disclaimer:
+This website's information and content are fictional and for demonstration purposes only.
+
+## Development Time:
+It took me exactly one month to build the website.
+
+## Technologies Used:
+HTML, CSS, SASS, JavaScript
+
+Creating this project was a significant milestone in my journey to becoming a front-end developer. It helped me understand the foundations of web development and experiment with styling and basic interactivity.
